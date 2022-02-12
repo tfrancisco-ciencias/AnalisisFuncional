@@ -48,7 +48,7 @@
 
 
         <header class="main-header">
-          <h1> Cálculo DOS </h1>
+          <h1> Análisis Funcional  </h1>
          <nav class="top-nav">
            <ul>
               <li> <a href="../Home.html"> Inicio  </a> </li>
@@ -162,7 +162,54 @@
 
 
 
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(V\) un espacio vectorial. Una funcional sublineal en \(V\)
+        es una función \(\rho: V\to \mathbb{R}\) que satisface:
+        \[
+        \rho(x+y)\leq \rho(x)+\rho(y), \quad \rho(t x) = t\rho(x), \quad 
+        \forall x,y\in V, \forall t  \geq 0.
+        \]
 
+    </p>
+    <p>
+        Si además satisface: 
+        \[
+        \rho(\alpha x)=|\alpha| \rho(x), \quad \forall x\in V, \forall \alpha \in \mathbb{F},
+        \]
+        llamamos a \(\rho\) una seminorma.
+    </p>
+    <p>
+        Observación: si \(\rho\) es una seminorma entonces, para todos \(x,y\in V\): 
+        \[
+        \rho(0)=0, \quad 0\leq \rho(x), \quad |\rho(x)-\rho(y)|\leq \rho(x-y).
+        \]
+    </p>
+    <p>
+        Ejemplos.
+        <ol>
+            <li>
+                Sea \(X\)  un conjunto no vacío y sea \(V\) el espacio vectorial de todas 
+                las funciones de \(X\) en \(\mathbb{R}\). Dado \(x_0\in X\) fijo definimos 
+                \[
+                \rho: V \to \mathbb{R}, \quad \rho(f)=|f(x_0)|
+                \]
+                Entonces \(\rho\) es una seminorma.
+            </li>
+            <li>
+                Sea \(X\) un espacio métrico o topológico localmente compacto (por ejemplo 
+                \(\mathbb{R}^n \) con la métrica usual). Por \(V\) denotamos el conjunto de 
+                funciones continuas de \(X\) en \(\mathbb{C}\). Para un subconjunto 
+                compacto \(K \subseteq X\) definimos 
+                \[
+                \rho: V \to \mathbb{R}, \quad \rho(f)=\sup_{x\in K}\{|f(x)|\}
+                \]
+                Entonces \(\rho\) es una seminorma. 
+            </li>
+        </ol>
+    </p>
+</div>
 
 <div class="definicion-box">  
     <h2 class="number-title"> Definición </h2>
@@ -180,7 +227,8 @@
         <ol>
             <li> En \(\mathbb{R}^n\) la bola abierta 
                 de radio \(r\), \(A=\{x\in \mathbb{R}^n: \|x\| < r\}\),
-                es absorbente.
+                es absorbente. Más en general, en un espacio vectorial normado
+                toda bola abierta centrada en cero es absorbente.
             </li>
             <li>
                 En \(\mathbb{R}^2\) un espiral que sale del origen.
@@ -197,6 +245,21 @@
         conn \(y\) está contenido en \(C\), es decir para todos 
         \(s,t \geq 1\) que satistacen \(s+t=1\) se cumple que 
         \(tx+sy\in C\).
+    </p>
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+        Prueba que un conjunto \(C \subset V\) es convexo si y sólo si 
+        para todos \(x_1,\dots, x_n \in C\) y escalares \(t_1,\dots, t_n\)
+        con \(t_i\geq 0\) y \(t_1+\cdots + t_n=1\) se tiene que 
+        \(t_1x_1+\cdots t_nx_n\in C\).
+    </p>
+    <p>
+       Nota: a una expresión de la forma \(t_1x_1+\cdots + t_nx_n\)  con 
+       \(t_i \geq 0\) y \(t_1+\cdots + t_n=1\), se le llama una combinacion 
+       lineal convexa.
     </p>
 </div>
 
