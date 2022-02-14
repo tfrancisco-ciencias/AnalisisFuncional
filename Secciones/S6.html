@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC >
 
 <html lang="es">
-  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <head>
     <!-- Following part is mathjax, for latex-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -28,18 +28,7 @@
       };
     </script>
 
-    <!-- This part is for using single $ for latex input, instead of \(\) -->
-    <script>
-        MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-            },
-        svg: {
-            fontCache: 'global'
-        }
-    };
-    </script>
-
+    
     <!-- CSS -->
 
     <link rel="stylesheet" , href="../style.css" />
@@ -84,6 +73,9 @@
                     de elementos en \(\tau\) entonces \(\cap \mathcal{U}\in \tau\).
                 </li>
             </ol>
+            Por ejemplo, todo conjunto \(X\) tiene al menos dos topologías: la 
+            topología más chica, \(\tau=\{\emptyset,X\}\); la más grande que es la potencia de \(X\), 
+            \(\tau=\{A: A\subseteq X\}\).
         </p>
         <p>
             Dados dos topologiás \(\tau_1,\tau_2\) en \(X\) decimos que \(\tau_1\)
@@ -95,7 +87,7 @@
         </p>
         <p>
             Dada una función entre dos espacios topológicos \(f:(X,\tau_X)\to (Y,\tau_Y)\)
-            decimos que es continua sii para todo \(U\in \tau_Y\), \(f^{U}\in \tau_X\). Por 
+            decimos que es continua sii para todo \(U\in \tau_Y\), \(f^{-1}(U)\in \tau_X\). Por 
             \(C((X,\tau_X),(Y,\tau_Y))\) denotamos al conjunto de funciones continuas de 
             \((X,\tau_X)\) a \((Y,\tau_Y)\).
         </p>
@@ -115,10 +107,23 @@
             C((X,\tau),(Y,\tau_Y)) \right\}
             \]
         </p>
+        <p>
+            observación: si tomamos \(\tau\) como el conjunto potencia de \(X\) entonces 
+            toda función de \(X\) en \(Y\) es continua en particular 
+            \(\mathcal{F}\subseteq C((X,\tau),(Y,\tau_Y))\) por lo que la 
+            familia que estamos intersectando para la definición de \(\tau_{\mathcal{F}}\)
+            es no vacía y por lo tanto \(\tau_{\mathcal{F}}\) está bien definida.
+        </p>
+        <p>
+            Nota: la definición anterior sigue funcionando si cada elemento de 
+            \(\mathcal{F}\) tiene un codominio diferente, es decir, 
+            para cada \(f\) existe un espacio topológico \((Y_f,\tau_f)\) tal que 
+            \(f:X\to Y_f\).
+        </p>
     </div>
 
     <div class="prop-box">
-        <h2 class="number-title"> Lema</h2>
+        <h2 class="number-title" id="Lema:BaseTopoDebil"> Lema</h2>
         <p>
             La familia 
             \[
@@ -139,7 +144,7 @@
             el espacio producto como \(X=\Pi_{i\in I}X_i\). Recordamos que los 
             elementos de \(X\) son simplemente funciones de \(I\) en \(\cup_{i\in I}X_i\)
             tal que el valor en  \(i\) pertenece en \(X_i\). Dado \(x\in X\) escribimos 
-            \(x=(x_i)_{i\in I}\) donde para toda \(i\in I\) \(x_i\) es el valor de \(x\)
+            \(x=(x_i)_{i\in I}\) donde, para toda \(i\in I\), \(x_i\) es el valor de \(x\)
             en \(i\).
         </p>
         <p>
@@ -158,15 +163,25 @@
         <h2 class="number-title"> Teorema </h2>
         <h3> Teorema de Tychonoff</h3>
         <p>
-            Si cada espacio \(\{(X_i,\tau_i)\}_{i\in I}\) es compacto entonces 
-            el espacio producto \(X=\Pi_{i\in I}X_i\), con la topología producto, 
+            Un espacio topológico se llama compacto si toda cubierta abierta del espacios 
+            admite una subcubierta finita. 
+        </p>
+        <p>
+            Para cada \(i\in I\) sea \((X_i,\tau_i)\) un espacio compacto no vacío. Entonces  
+            el espacio producto \(X=\Pi_{i\in I}X_i\), con la topología producto (la del ejemplo anterior), 
             es compacto.
         </p>
-
+        <p>
+            Referencias: 
+            <oL>
+                <li>Willard, "General Topology", Teorema 17.8</li>
+                <li> <a href="http://math.hunter.cuny.edu/mbenders/notes4.pdf">Notas de John Terilla.</a>  </li>
+            </oL>
+        </p>
     </div>
 
     <div class="prop-box">
-        <h2 class="number-title"> Proposición </h2>
+        <h2 class="number-title" id="Prop:RedesConvergentesTopDebil"> Proposición </h2>
         <p>
             Sea \(X\) un conjunto y \((Y,\tau_Y)\) un espacio topológico. 
             Sea  \(\mathcal{F}\) una familia de funciones de \(X\) en \(Y\) y 
@@ -204,12 +219,14 @@
         <p>
             Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
             y \(X^*\) su dual. Dado \(x\in X\) definimos \(\iota_x:X^*\to \mathbb{F}\)
-            por \(\iota_x(\varphi)=\varphi(x)\). La topología débil generada por 
-            familia \(\{\iota_x\}_{x\in X}\) se llama la topología débil estrella
-            en \(X^*\) o simplemente  débil-* y se denota por \(\omega^*\).
+            por \(\iota_x(\varphi)=\varphi(x)\).
         </p>
         <p>
-            Por la Proposición tenemos que una red de funcionales lineales, \((\varphi_{\alpha})_{\alpha \in A}\),
+            La topología débil generada por 
+            familia \(\{\iota_x\}_{x\in X}\) se llama la topología débil estrella
+            en \(X^*\) o simplemente  débil-* y se denota por \(\omega^*\).</p>
+        <p>
+            Por la <a href="#Prop:RedesConvergentesTopDebil">Proposición 1.6<a> tenemos que una red de funcionales lineales, \((\varphi_{\alpha})_{\alpha \in A}\),
             converge a la funcional \(\varphi\) en la topología débil-* sii para toda \(x\in X\) 
             \[
                 \lim_{\alpha \in A}\varphi_\alpha(x)=\varphi(x). 
@@ -225,20 +242,86 @@
             En el espacio topológico \((X^*,\omega^*)\) las operaciones de suma 
             y producto por un escalar son continuas.
         </p>
-    </div>
+
+        
+
+        <button class="respButton hvr-grow "> Demostración </button>
+        <div class="resp-box flexbox ">
+        <p>
+            Usando redes es suficiente probar que si \((\varphi_\alpha)_{\alpha \in A}\)
+            y \((\psi_{\beta})_{\beta \in B}\) son redes en \(X^*\) tal que 
+            \begin{equation}\label{Eqn:redesParaCombinacionLineal}
+            \lim_{\alpha \in A} \varphi_\alpha = \varphi, \quad \lim_{\beta \in B} \varphi_\beta = \psi, 
+            \quad  \textrm{en  \((X^*,\omega^*)\)} 
+            \end{equation}
+            entonces, para todo \(a \in \mathbb{F}\) 
+            \[
+            \lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)=a\varphi+\psi \quad \textrm{en \((X^*,\omega^*)\)}.
+            \]
+            Nota: estamos tomando la red sobre el conjunto dirigido 
+            \(A\times B\) donde \((\alpha,\beta)\leq (\alpha', \beta')\)
+            sii \(\alpha \leq \alpha '\) y \(\beta \leq \beta '\).
+        </p>
+        <p>
+            Por la  Proposición 1.6
+            es suficiente probar  que para todo \(x\in X\)
+            \[
+            \lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)(x)=(a\varphi+\psi)(x) \quad \textrm{en \(\mathbb{F}\)}.
+            \]
+            
+        </p>
+        <p>
+            Se sigue que para toda \((\alpha, \beta) \geq (\alpha_0, \beta_0)\)
+            \[
+            |(a \varphi_\alpha + \psi_\beta)(x) - (a\varphi+\psi)(x)|< \varepsilon
+            \]
+            por lo que \(\lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)(x)=(a\varphi+\psi)(x)\)
+            en \(\mathbb{F}\).
+        </p>
+        <p>
+            De nuevo por la Proposición 1.6 
+            y por   \eqref{Eqn:redesParaCombinacionLineal} tenemos 
+            \[
+            \lim_{\alpha \in A}\varphi_\alpha(x)=\varphi(x), \lim_{\beta \in B}\psi_{\beta}(x)=\psi(x)
+            \]
+            por lo tanto, dado \(\varepsilon >0\) existen \(\alpha_0\in A, \beta_0\in B\) tal que 
+            si \(\alpha \geq \alpha_0\) y \(\beta \geq \beta_0\) entonces 
+            \[
+            |\varphi_\alpha(x)-\varphi(x)|< \frac{\varepsilon}{2(|a|+1)}, |\psi_\beta(x)-\psi(x)| < \frac{\varepsilon}{2}
+            \]
+        </p>
+        
+        </div>
+        
+        
+     </div>
 
     <div class="nota-box">
         <h2 class="number-title"> Nota</h2>
         <p>
-            Por la proposición anterior, las vecindades \(\omega^*\) de un
+            Por la proposición anterior, las vecindades en la topología \(\omega^*\) de un
             punto \(\varphi_0\in X^*\) son de la forma \(\varphi_0+V\), 
             donde \(V\) es una vecindad del cero. 
         </p>
         <p>
-            Por la proposición las vecindades de la funcional cero son e la forma 
+            Por el <a href="#Lema:BaseTopoDebil"> Lema 1.3</a> las vecindades de la funcional cero son e la forma 
             \[
             \cap_{i=1}^n \iota_{x_i}^{-1}(B_{r_i}(0))=\{\varphi\in X^*: |\varphi(x_i)|< r_i, i=1,\dots, n\}.
             \]
+            donde \(B_r(0)=\{a \in \mathbb{F} : |a|< r\}\).
+            
+        </p>
+        <p>
+            Además nota que los conjuntos \(\cap_{i=1}^n \iota_{x_i}^{-1}(B_{r_i}(0))\)
+            son convexos y balanceados. 
+        </p>
+        <p>
+            Denotamos 
+            \[
+            V_r(\varphi_0;x_1,\dots, x_n)=\{\varphi\in X^*: |\varphi(x_i)-\varphi_0(x_i)|< r, i=1,\dots, n\}.
+            \]
+            Estos conjuntos pueden pensarse como las "bolas abiertas de radio \(r\) centradas en cero"
+            en la topología \(\omega^*\).
         </p>
     </div>
 
