@@ -32,7 +32,17 @@
 
     <link rel="stylesheet" , href="../style.css" />
 
-    
+      <!-- This part restart counter of cards to start at n+1 -->
+      <style>
+        body.number-title{
+          counter-reset: sectionCounter 2 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 2 cardCounter ;
+        }
+      </style>
+  
+
     <!-- Top Menu  -->
 
 
@@ -50,15 +60,126 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> Un teorema de extensión de Hahn-Banach  </title>
+      <title> Teoremas de extensión </title>
     
   </head>
-
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Un teorema de extensión de Hahn-Banach </h1>     
+    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
 
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
+        \(\rho:V\to \mathbb{R}\) una funcional sublineal.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        \[
+          \varphi(x)\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(\tilde{\varphi}(x)\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+    </div>
+
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
+        \(\rho:V\to \mathbb{R}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\).
+      </p>
+      <ol>
+        <li>
+          Supongamos que \(\varphi: V\to \mathbb{C}\) es  \(\mathbb{C}\)-lineal y defimamos 
+          \(\varphi_r(x)=\Re(\varphi(x))\), para \(x\in V\). Entonces \(\varphi_r\)
+          es \(\mathbb{R}\)-lineal y para todo \(x\in  V\)
+          \[
+            \varphi(x)=\varphi_r(x)-i\varphi_r(ix).
+           \]
+        </li>
+        <li>
+          Supongamos que \(\psi:V\to \mathbb{R}\) es \(\mathbb{R}\)-lineal. Entonces
+          existe \(\varphi:V\to \mathbb{C}\), \(\mathbb{C}\)-lineal tal que 
+          \(\Re(\varphi)=\psi\).
+        </li>
+      </ol>
+
+    </div>
 
  
 
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
+        \(\rho:V\to \mathbb{C}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{C}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{C}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+    </div>
 </body>
