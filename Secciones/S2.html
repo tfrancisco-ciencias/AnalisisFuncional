@@ -60,115 +60,14 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> Funcionales sublineales </title>
+      <title> § 2 </title>
     
   </head>
-
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Funcionales sublineales </h1>     
-
-    <div class="definicion-box">
-      <h2 class="number-title"> Definición</h2>
-      <p>
-        Sea \(V\) un espacio vectorial. Una funcional sublineal 
-        es una función \(\rho:V\to \mathbb{R}\) que satisface
-        <ol>
-          <li> para todos \(x,y\in V\), \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
-          <li> para todo \(x\in V\) y \(t\geq 0\), \(\rho(tx)=t\rho(x)\).</li>
-          <p>
-            Si además satisafce la condición 
-            <li>
-              \[
-              \rho(ax)=|a|\rho(x)
-            \]
-            </li>
-            
-            para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
-          </p>
-        </ol>
-      </p>
-      
-      <p> Ejemplos</p>
-      <ol>
-        <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
-          de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
-        definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
-        </li>
-        <li>
-          Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
-          a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
-          en \(\mathbb{F}\). Dado un 
-          subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
-          \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\). Entonces \(\rho\) es una seminorma.
-        </li>
-
-      </ol>
-      <p>
-        Observación: si \(\rho\) es una seminorma en \(V\) entonces para todos \(x,y\in V\):
-        \[
-        \rho(0)=0, 0 \leq \rho(x), |\rho(x)-\rho(y)|\leq \rho(x-y)
-        \]
-      </p>
-    </div>
+    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
 
 
-
-
-    <div class="definicion-box"> 
-      <h2 class="number-title"> Definición </h2>
-      <p>
-        Sea \(V\) un espacio vectorial y \(A\subseteq V\) un conjunto 
-        absorbente. La funcional de Minkowski de \(A\), denotada \(\mu_A\),
-        es la función \(\mu_A:V\to [0,\infty)\) dada por
-        \[
-          \mu_A(x)=\inf\{t>0: x\in tA \}
-        \]
-        Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
-      </p>
-    </div>
-
-
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición </h2>
-        <p>
-          Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
-          <ol>
-            <li>
-              la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
-            </li>
-            <li>
-              Si además definimos 
-              \[
-              B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
-              \]
-              entonces \(B\subseteq A \subseteq C \) y 
-              \[
-              \mu_B=\mu_A=\mu_C.
-              \]
-            </li>
-            <li>
-              Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
-              seminorma.
-            </li>
-          </ol> 
-        </p>
-      
-    </div>
-
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición </h2>
-      <p>
-        Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. Define 
-        \[
-          A:=\{x\in V: \rho(x)< 1\}
-        \]
-        Entonces \(A\) es convexo y absorbente. Si además \(\rho\)
-        es una seminorma entonces \(A\) es balanceado y 
-        \(\mu_A=\rho.\)
-      </p>
-
-    </div>
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
@@ -198,6 +97,89 @@
       </p>
 
     </div>
+
+
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
+        \(\rho:V\to \mathbb{R}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\).
+      </p>
+      <ol>
+        <li>
+          Supongamos que \(\varphi: V\to \mathbb{C}\) es  \(\mathbb{C}\)-lineal y defimamos 
+          \(\varphi_r(x)=\Re(\varphi(x))\), para \(x\in V\). Entonces \(\varphi_r\)
+          es \(\mathbb{R}\)-lineal y para todo \(x\in  V\)
+          \[
+            \varphi(x)=\varphi_r(x)-i\varphi_r(ix).
+           \]
+        </li>
+        <li>
+          Supongamos que \(\psi:V\to \mathbb{R}\) es \(\mathbb{R}\)-lineal. Entonces
+          existe \(\varphi:V\to \mathbb{C}\), \(\mathbb{C}\)-lineal tal que 
+          \(\Re(\varphi)=\psi\).
+        </li>
+      </ol>
+
+    </div>
+
  
 
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Extensión de Hahn-Banach</h3>
+      <p>
+        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
+        \(\rho:V\to \mathbb{C}\) una seminorma.
+      </p>
+      <p>
+        Supongamos que tenemos un subespacio \(W\leq V\) y 
+        una función lineal \(\varphi: W\to \mathbb{C}\) que satisaface
+        \[
+          |\varphi(x)|\leq \rho(x), \forall x\in W.
+        \]
+      </p>
+      <p>
+        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{C}\)
+        tal que 
+        <ol>
+          <li>
+            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
+          </li>
+          <li>
+            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
+          </li>
+        </ol>
+      </p>
+
+    </div>
 </body>

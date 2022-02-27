@@ -50,7 +50,7 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> Un poco de álgebra  </title>
+      <title> § 1  </title>
     
   </head>
 
@@ -100,9 +100,17 @@
     </p>
     <p>
         El mapeo conciente de define como 
-        \(\pi: V\to V/W\), \(\pi(x)=x+W\), el cual se puede 
-        ver directamente que es lineal y con kernel \(\ker(\pi)=W\).
+        \[\pi: V\to V/W, \pi(x)=x+W\]
     </p>
+</div>
+
+<div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+        Sea \(V\) un espacio vectorial y \(W\) un subespacio.  El 
+        mapeo cociente \(\pi:V\to V/W\) es lineal con \(\ker(\pi)=\{0\}\).
+    </p>
+
 </div>
 
 
@@ -151,56 +159,6 @@
     </ol>
 </div>
 
-
-
-<div class="definicion-box">
-    <h2 class="number-title"> Definición </h2>
-    <p>
-        Sea \(V\) un espacio vectorial. Una funcional sublineal en \(V\)
-        es una función \(\rho: V\to \mathbb{R}\) que satisface:
-        \[
-        \rho(x+y)\leq \rho(x)+\rho(y), \quad \rho(t x) = t\rho(x), \quad 
-        \forall x,y\in V, \forall t  \geq 0.
-        \]
-
-    </p>
-    <p>
-        Si además satisface: 
-        \[
-        \rho(\alpha x)=|\alpha| \rho(x), \quad \forall x\in V, \forall \alpha \in \mathbb{F},
-        \]
-        llamamos a \(\rho\) una seminorma.
-    </p>
-    <p>
-        Observación: si \(\rho\) es una seminorma entonces, para todos \(x,y\in V\): 
-        \[
-        \rho(0)=0, \quad 0\leq \rho(x), \quad |\rho(x)-\rho(y)|\leq \rho(x-y).
-        \]
-    </p>
-    <p>
-        Ejemplos.
-        <ol>
-            <li>
-                Sea \(X\)  un conjunto no vacío y sea \(V\) el espacio vectorial de todas 
-                las funciones de \(X\) en \(\mathbb{R}\). Dado \(x_0\in X\) fijo definimos 
-                \[
-                \rho: V \to \mathbb{R}, \quad \rho(f)=|f(x_0)|
-                \]
-                Entonces \(\rho\) es una seminorma.
-            </li>
-            <li>
-                Sea \(X\) un espacio métrico o topológico localmente compacto (por ejemplo 
-                \(\mathbb{R}^n \) con la métrica usual). Por \(V\) denotamos el conjunto de 
-                funciones continuas de \(X\) en \(\mathbb{C}\). Para un subconjunto 
-                compacto \(K \subseteq X\) definimos 
-                \[
-                \rho: V \to \mathbb{R}, \quad \rho(f)=\sup_{x\in K}\{|f(x)|\}
-                \]
-                Entonces \(\rho\) es una seminorma. 
-            </li>
-        </ol>
-    </p>
-</div>
 
 <div class="definicion-box">  
     <h2 class="number-title"> Definición </h2>
@@ -254,7 +212,128 @@
     </p>
 </div>
 
+<div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+        Sea \(V\) un espacio vectorial y \(C\) un subconjunto convexo. Entonces 
+        para todos \(s,t>0\) se cunple 
+        \[
+        sC+tC=(s+t)C.
+        \]
+    </p>
+</div>
 
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Sea \(V\) un espacio vectorial. Un subconjunto \(B\subseteq V\) se llama 
+        balanceado si \(a B \subseteq B\) para todo \(a\in \mathbb{F}\) con \(|a|\leq 1\).
+    </p>
+
+</div>
  
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición</h2>
+    <p>
+      Sea \(V\) un espacio vectorial. Una funcional sublineal 
+      es una función \(\rho:V\to \mathbb{R}\) que satisface
+      <ol>
+        <li> para todos \(x,y\in V\), \(\rho(x+y)\leq \rho(x)+\rho(y)\).</li>
+        <li> para todo \(x\in V\) y \(t\geq 0\), \(\rho(tx)=t\rho(x)\).</li>
+        <p>
+          Si además satisafce la condición 
+          <li>
+            \[
+            \rho(ax)=|a|\rho(x)
+          \]
+          </li>
+          
+          para todos \(a\in \mathbb{F}\) y \(x\in V\) se llama seminorma.
+        </p>
+      </ol>
+    </p>
+    
+    <p> Ejemplos</p>
+    <ol>
+      <li> Sea \(X\) un conjunto cualquiera y consideremos el espacio vectorial de funciones 
+        de \(X\) en \(\mathbb{F}\). Dado un punto \(x_0\in X\), fijo y arbitrario, 
+      definimos \(\rho(f)=|f(x_0)|\). Entonces \(\rho\) es una seminorma. 
+      </li>
+      <li>
+        Sea \(X\) un espacio métrico (o topológico) localmente compacto. Vamos
+        a denotar por \(V\) al conjunto de funciones continuas de \(X\) 
+        en \(\mathbb{F}\). Dado un 
+        subconjunto compacto \(K\subseteq X\) defimos  \(\rho:V\to [0,\infty)\) por 
+        \(\rho(f)=\sup_{x\in K}\{|f(x)|\}\). Entonces \(\rho\) es una seminorma.
+      </li>
+
+    </ol>
+    <p>
+      Observación: si \(\rho\) es una seminorma en \(V\) entonces para todos \(x,y\in V\):
+      \[
+      \rho(0)=0, 0 \leq \rho(x), |\rho(x)-\rho(y)|\leq \rho(x-y)
+      \]
+    </p>
+  </div>
+
+
+
+
+  <div class="definicion-box"> 
+    <h2 class="number-title"> Definición </h2>
+    <p>
+      Sea \(V\) un espacio vectorial y \(A\subseteq V\) un conjunto 
+      absorbente. La funcional de Minkowski de \(A\), denotada \(\mu_A\),
+      es la función \(\mu_A:V\to [0,\infty)\) dada por
+      \[
+        \mu_A(x)=\inf\{t>0: x\in tA \}
+      \]
+      Ya que \(A\) es absorbente \(\mu_A\) está bien definida.
+    </p>
+  </div>
+
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+      <p>
+        Sea \(A\subseteq V\) un subconjunto convexo y absorbente. Entonces:
+        <ol>
+          <li>
+            la funcional de Minkowski, \(\mu_A\), es una funcional sublineal.
+          </li>
+          <li>
+            Si además definimos 
+            \[
+            B=\{x\in V: \mu_A(x)< 1 \}, C=\{x\in V: \mu_A(x)\leq 1 \}
+            \]
+            entonces \(B\subseteq A \subseteq C \) y 
+            \[
+            \mu_B=\mu_A=\mu_C.
+            \]
+          </li>
+          <li>
+            Finalmente, si \(A\) es balanceado entonces \(\mu_A\) es una 
+            seminorma.
+          </li>
+        </ol> 
+      </p>
+    
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+      Sea \(\rho:V\to \mathbb{R}\) una funcional sublineal. Define 
+      \[
+        A:=\{x\in V: \rho(x)< 1\}
+      \]
+      Entonces \(A\) es convexo y absorbente. Si además \(\rho\)
+      es una seminorma entonces \(A\) es balanceado y 
+      \(\mu_A=\rho.\)
+    </p>
+
+  </div>
 
 </body>

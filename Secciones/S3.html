@@ -60,125 +60,141 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> Teoremas de extensión </title>
+      <title> § 3 </title>
     
   </head>
   <body class="fondo-body" >
 
-    <h1 class="number-title flexbox"> Teoremas de extensión  </h1>     
+    <h1 class="number-title flexbox"> Espacios de Banach  </h1>     
 
-
-
-    <div class="teorema-box">
-      <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
+    <div class="definicion-box">
+      <h2 class="number-title"> Definicion</h2>
       <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
-        \(\rho:V\to \mathbb{R}\) una funcional sublineal.
+        Un espacio de Banach es un espacio vectorial normado completo.
       </p>
+
+    </div>
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
       <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
+        Sea \((x,d)\) un espacio métrico (ó topológico) compacto. Definimos 
         \[
-          \varphi(x)\leq \rho(x), \forall x\in W.
+          C(X:\{f:X\to \mathbb{F}: \textrm{\(f\) continua en \(X\)}\})
         \]
+        para \(f\in C(X)\) se define 
+        \[
+        \|f\|_\infty=\sup_{x\in X}\{|f(x)|\}
+        \]
+        
       </p>
       <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
-        tal que 
-        <ol>
-          <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
-          </li>
-          <li>
-            para todo \(x\in V\), \(\tilde{\varphi}(x)\leq \rho(x)\).
-          </li>
-        </ol>
+        \((C(X),\|\cdot\|_\infty)\) es un espacio de Banach (dar sketch de prueba).
+      </p>
+
+    </div>
+
+    <div class="info-box">
+      <div class="number-title"> Ejemplo</div>
+      <p>
+        El espacio de las funciones acotadas.
       </p>
 
     </div>
 
 
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        El espacio de las funciones \(L_p(X,\Sigma,\mu)\), \(p\in [1,\infty)\).
+      </p>
+
+    </div>
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        El espacio de las funciones de variación acotada.
+      </p>
+
+    </div>
+
+    <div class="definicion-box"> 
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Conjuntos dirigidos y redes</h3>
+      <p>
+
+      </p>
+      <p>
+        Ejemplo.
+      </p>
+      <p>
+        Las partes finitas de un conjunto con la red de sumas parciales.
+      </p>
+
+    </div>
+    
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <h3> Convergencia de redes </h3>
+
+    </div>
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
       <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{R}\) y 
-        \(\rho:V\to \mathbb{R}\) una seminorma.
+        Sea \(X\) un conjunto y \(\tau_1, \tau_2\) dos topologías en \(X\). 
       </p>
       <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{R}\) que satisaface
-        \[
-          |\varphi(x)|\leq \rho(x), \forall x\in W.
-        \]
+        Las topologías son iguales si y sólo si tienen las mismas redes convergentes.
       </p>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
       <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{R}\)
-        tal que 
-        <ol>
-          <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
-          </li>
-          <li>
-            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
-          </li>
-        </ol>
+        Sean \((X,\tau_X), (Y,\tau_Y)\) dos espacios topológicos. La función 
+        \(f:(X,\tau_X)\to (Y)\) es continua en \(x_0\) sii para toda 
+        \((x_\alpha)_{\alpha \in A}\) red convergente a \(x_0\) se tiene que 
+        \((f(x_\alpha))_{\alpha \in A}\) es convergente a \(f(x_0)\).
+      </p>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición  </h2>
+      <h3> Red de Cauchy</h3>
+
+    </div>
+
+    <div class="prop-box">
+       <h2 class="number-title"> Proposición </h2>
+       <p>
+         En un espacio de Banach toda red de Cauchy es convergente.
+       </p>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <p>
+        Sucesión convergente.
       </p>
 
     </div>
 
     <div class="prop-box">
-      <h2 class="number-title"> Lema </h2>
+      <h2 class="number-title"> Proposición</h2>
       <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\).
+        Toda sucesión absolutamente convergente es convergente.
       </p>
-      <ol>
-        <li>
-          Supongamos que \(\varphi: V\to \mathbb{C}\) es  \(\mathbb{C}\)-lineal y defimamos 
-          \(\varphi_r(x)=\Re(\varphi(x))\), para \(x\in V\). Entonces \(\varphi_r\)
-          es \(\mathbb{R}\)-lineal y para todo \(x\in  V\)
-          \[
-            \varphi(x)=\varphi_r(x)-i\varphi_r(ix).
-           \]
-        </li>
-        <li>
-          Supongamos que \(\psi:V\to \mathbb{R}\) es \(\mathbb{R}\)-lineal. Entonces
-          existe \(\varphi:V\to \mathbb{C}\), \(\mathbb{C}\)-lineal tal que 
-          \(\Re(\varphi)=\psi\).
-        </li>
-      </ol>
 
     </div>
 
- 
-
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
-      <h3> Extensión de Hahn-Banach</h3>
       <p>
-        Sea \(V\) un espacio vectorial sobre \(\mathbb{C}\) y 
-        \(\rho:V\to \mathbb{C}\) una seminorma.
-      </p>
-      <p>
-        Supongamos que tenemos un subespacio \(W\leq V\) y 
-        una función lineal \(\varphi: W\to \mathbb{C}\) que satisaface
-        \[
-          |\varphi(x)|\leq \rho(x), \forall x\in W.
-        \]
-      </p>
-      <p>
-        Entonces exsite una función lineal \(\tilde{\varphi}:V\to \mathbb{C}\)
-        tal que 
-        <ol>
-          <li>
-            \(\tilde{\varphi}(x)=\varphi(x)\), para todo \(x\in W\);
-          </li>
-          <li>
-            para todo \(x\in V\), \(|\tilde{\varphi}(x)|\leq \rho(x)\).
-          </li>
-        </ol>
+        Un espacio es de Banach sii toda serie absolutamente convergente es convergente.
       </p>
 
     </div>
