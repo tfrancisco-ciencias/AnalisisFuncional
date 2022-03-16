@@ -268,7 +268,7 @@
             <ol>    
                 <li>
                    Desigualdad de Bessel: 
-                   \[\sum_{\alpha \in A}|\langle u, x_\alpha|^2 \leq \|u\|^2\]
+                   \[\sum_{\alpha \in A}|\langle u, x_\alpha \rangle|^2 \leq \|u\|^2\]
                 </li>
                 <li>
                     La serie \(\sum_{\alpha \in A} \langle u, x_\alpha \rangle x_\alpha \)
@@ -287,6 +287,37 @@
 
         </div>
 
+        <div class="prop-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio de Hilbert.
+            </p>
+            <p>
+                Sea \(\{y_\alpha\}_{\alpha \in A}\) un conjunto ortonormal y 
+                \(Y=\overline{\span(\{y_\alpha\}_{\alpha \in A})}\).
+            </p>
+            <p>
+                Si \(x_0=y_0+z_0\) con \(y_0\in Y\) y \(z_0\in Y^\perp\) entonces 
+                \[
+                y_0=\sum_{\alpha \in A} \langle x, y_\alpha \rangle y_\alpha
+                \]
+            </p>
+            <p>
+                Además, son equivalentes:
+                <ol>
+                    <li>
+                        \(u\in Y \),
+                    </li>
+                    <li>
+                        \(u=\sum_{\alpha \in A}  \langle u,x_\alpha \rangle y_\alpha\)
+                    </li>
+                    <li>
+                        \( \|u\|^2=\sum_{\alpha \in A}|\langle u, y_\alpha \rangle|^2 \)
+                    </li>
+                </ol>
+            </p>
+
+        </div>
 
 
 
