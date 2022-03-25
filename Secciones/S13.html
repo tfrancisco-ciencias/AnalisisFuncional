@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 12 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 12 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 13  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Funcionales y operadores acotados   </h1>     
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio con producto interior
+            positivo definido y \(x\in H\).
+        </p>
+        <p>
+            Definimos \(\varphi_x:H\to \mathbb{C}\) por \(\varphi_x(y)=\langle y, x\rangle \). 
+            Entonces \(\varphi_x\in H^*\) y \(\|\varphi_x\|=\|x\|\).
+        </p>
+    </div>
+
+    <div class="teorema-box"> 
+        <h2 class="number-title"> Teorema </h2>    
+        <h3> Teorema de Representación de Riesz</h3>
+        <p>
+            Sea \((H,\langle \cdot, \cdot \rangle )\) un espacio con producto interior
+            positivo definido.  
+        </p>
+        <p>
+            Sea \(\varphi:H\to \mathbb{C}\) una funcional lineal acotada. Entonces existe un único
+            \(x\in H\) tal que \(\varphi(y)=\langle y, x \rangle\) para toda \(y\in H\).
+        </p>
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sean \(H\) y \(K\) espacios de Hilbert. Una funcional bilineal conjugada 
+            en \(H \times K\) es una función \(b:H \times K \to \mathbb{C}\) tal que 
+            para todos \(x_1,x_2\in H\), \(y_2,y_2\in K\), \(a\in \mathbb{C}\) se cunple 
+            <ol>
+                <li>
+                    \(b(ax_1+x_2,y_1)=ab(x_1,y_1)+ b(x_2,y_1)\),
+                </li>
+                <li>
+                    \(b(x_1,ay_1+y_2)=\overline{a}b(x_1,y_1)+b(x_1,y_2)\).
+                </li>
+            </ol>
+            <p>
+                Si además 
+                \[
+                \|b\|:= \sup_{\|x\|\leq 1, \|y\|\leq 1}\{|b(x,y)| \} < +\infty
+                \]
+                decimos que \(b\) es acotada y en tal caso éste supremo se define 
+                como la norma de \(b\).
+            </p>
+            <p>
+                Observación: para todos \(x\in H, y\in K\)
+                \[
+                |b(x,y)|\leq \|b\| \|x\| \|y\|.
+                \]
+            </p>
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sean \(H,K\) espacios con producto interior positivo definido y 
+            \(T:H\to K\) un operador lineal acotado. 
+        </p>
+        <p>
+            Definimos \(b_T:H\times K \to \mathbb{C}\) por 
+            \(b_T(x,y)=\langle Tx, y \rangle \). Entonces \(b_T\)
+            es bilineal conjugada, acotada con \(\|b_T\|=\|T\|\).
+        </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+            Sean \(H\) y \(K\) espacios con producto interior positivo definido 
+            y \(S,T: H\to K\) operadores lineales acotados. 
+        </p>
+        <ol>
+            <li>
+                Si \(\langle Tx, y \rangle = \langle Sx, y\rangle\) para todos 
+                \(x\in H\) y \(y\in K\)  entonces \(S=T\).
+            </li>
+            <li>
+                Si \(H=K\) y \(\langle Tx,x \rangle = \langle Sx,x\rangle\) 
+                para todo \(x\in H\) entonces \(S=T\).
+            </li>
+        </ol>
+
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sean \(H,K\) espacios con producto interior positivo definido y 
+            \(b:H\times K \to \mathbb{C}\) bilineal conjugada. 
+        </p>
+        <p>
+            Entonces existe 
+            un único operador lineal acotada \(T:H\to K\) tal que 
+            \(b(x,y)=\langle Tx, y\rangle\) para todos \(x\in H\), \(y\in K\).
+        </p>
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sean \(H,K\) espacios de  Hilbert y \(T:H\to K\) un operadore lineal  acotado. Existe 
+            un único operador lineal acotado \(T^*: K\to H\) tal que 
+            \[
+            \langle Tx,y \rangle = \langle x,T^*y \rangle
+            \]
+            para todos \(x\in H, y\in K\).
+        </p>
+        <p>
+            Además si  \(S:H\to K \) es lineal acotado y \(a\in \mathbb{C}\) entonces 
+            <ol>
+                <li>
+                    \((aS+T)^*=\overline{a}S^*+T^*\).
+                </li>
+                <li>
+                    \((ST)^*=T^*S^*\).
+                </li>
+                <li>
+                    \((T^*)^*=T\).
+                </li>
+                <li>
+                    \(\|T\|=\|T^*\|\).
+                </li>
+                <li>
+                    \(\|T^*T\|=\|T\|^2\).
+                </li>
+            </ol>
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sean \(H,K\) espacios de Hilbert y \(T:H\to K\) lineal acotada. 
+        </p>
+        <p>
+            \(T\) es
+            un isomorfimo de espacios de Hilbert sii \(TT^*=I=T^*T\).
+        </p>
+
+    </div>
+
+    <div class="nota-box">
+        <h2 class="number-title"> Clases de operadores </h2>
+        <p>
+            Sean \(H\) un espacio de Hilbert y \(T:H\to H\) lineal acotada.
+        </p>
+        <ol>
+            <li>
+                \(T\) es autoadjunto sii \(T=T^*\).
+            </li>
+            <li>
+                \(T\) es unitario sii \(T^*T=I=TT^*\).
+            </li>
+            <li>
+                \(T\) se llama normal sii \(TT^*=T^*T\).
+            </li>
+            <li>
+                \(T\) se llama positivo si existe \(S:H\to H\) lineal acotada  tal que 
+                \(T=S^*S\).
+            </li>
+        </ol>
+    </div>
+</body>
