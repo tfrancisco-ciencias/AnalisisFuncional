@@ -71,7 +71,17 @@
     <div class="definicion-box">
       <h2> Definición </h2>
       <p>
-        Funcionales lineales acotadas.
+        Sea \(X\) un espacio vectorial normado. Una función \(\varphi:X\to \mathbb{F}\)
+        se llama funcional lineal acotada si 
+        <ol>
+          <li>
+            \(\varphi\) es \(\mathbb{F}\)-lineal, 
+          </li>
+          <li>
+            existe una constante \(M> 0\) tal que \(|\varphi(x)|\leq M\|x\|\)
+            para toda \(x\in X\).
+          </li>
+        </ol>
       </p>
     </div>
 
@@ -92,7 +102,7 @@
     <div class="prop-box">
       <h2 class="number-title"> Proposición</h2>
       <p>
-        Sea \(\varphi: X\to \mathbb{F}\) funcional lineal. Las siguientes son 
+        Sea \(\varphi: X\to \mathbb{F}\) funcional lineal. Las siguientes condiciones son 
         equivalentes.
       </p>
       <ol>
@@ -112,7 +122,19 @@
     <div class="definicion-box">
       <h2 class="number-title"> Definición </h2>
       <p>
-        El espacio dual.
+        Sea \(X\) un espacio vectorial normado. El espacio dual de \(X\) (ó espacio conjugado) se define como 
+        \[
+          X^*=\{\varphi:X\to \mathbb{F}: \textrm{\(\varphi\) es acotada}\}.
+        \]
+      </p>
+      <p>
+        Dada \(\varphi \in X^*\) definimos 
+        \[
+        \|\varphi\|=\sup_{x\in X, \|x\|\leq 1}\{|\varphi(x)| \}.
+        \]
+      </p>
+      <p>
+        Obsevación: para todo \(x\in X\), \(|\varphi(x)|\leq \|\varphi\| \|x\|\).
       </p>
 
     </div>
