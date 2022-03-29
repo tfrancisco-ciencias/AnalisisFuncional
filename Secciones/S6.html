@@ -85,24 +85,75 @@
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
       <p>
-        Hahn-Banach para funciones acotadas.
+        Sea \(X\) un espacio vectorial normado y \(Y\leq X\) un subespacio. 
+        Si \(\phi:Y\to \mathbb{F}\) es una funcional lineal acotada entonces 
+        existe \(\tilde{\phi}:X\to \mathbb{F}\) funcional lineal acotada 
+        tal que 
+        <ol>
+            <li>
+                \(\tilde{\phi}|_Y=\phi\).
+            </li>
+            <li>
+                \(\|\tilde{\phi}\|=\|\phi\|\).
+            </li>
+        </ol>
       </p>
 
     </div>
 
     <div class="prop-box">
-      <h2 class="number-title"> Proposición </h2>
+      <h2 class="number-title"> Corolario </h2>
       <p>
-        Separación de puntos. Funcionales que dan la norma de un punto.
+        Sea \(X\) un espacio vectorial normado. Para todo \(x\in X\)
+        existe \(\varphi\in X^*\) tal que \(\varphi(x)=\|x\|\) y \(\|\varphi\|=1\).
       </p>
+
+    </div>
+    <div class="prop-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Si \(\varphi(x)=0\) para todo 
+            \(\varphi \in X^*\) entonces \(x=0\).
+        </p>
 
     </div>
  
-    <div class="prop-box">
-      <h2 class="number-title"> Proposición </h2>
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
       <p>
-        Separacion de convexos, compactos.
+        Sea \(X\) un espacio vectorial normado y \(A,B\subseteq X\) convexos, no vacíos y ajenos.
       </p>
+      <ol>
+          <li>
+              Si \(A\) es abierto entonces existe \(\varphi\in X^*\) y \(c\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c \leq \Re(\varphi(b))
+              \]
+              para todo \(a\in A\) y \(b\in B\).
+          </li>
+          <li>
+              Si \(A\) es compacto y \(B\) es cerrado entonces existe \(\varphi\in X^*\) 
+              y \(c_1,c_2\in \mathbb{R}\) tal que 
+              \[
+              \Re(\varphi(a)) < c_1 < c_2 <  \Re(\varphi(b))
+              \]
+
+          </li>
+      </ol>
+
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sea \(X\) un espacio vectorial normado. Sea \(C \subseteq Y^*\)
+            convexo y \(\omega^*\)-cerrado. Si \(\psi_0 \notin C\) entonces 
+            existe \(x\in X\) y \(c_1,c_2\in \mathbb{R}\) tal que 
+            \[
+            \Re(\hat{x}(\varphi)) < c_1 < c_2 < \Re(\hat{x}(\psi_0))
+            \]
+            para toda \(\varphi\in C\).
+        </p>
 
     </div>
 
