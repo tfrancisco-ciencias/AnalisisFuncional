@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 14 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 14 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 15  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> El espectro </h1>     
+
+        <div class="definicion-box">
+            <h2 class="number-title">Definición</h2>
+            <p>
+                Un operador actuando en un espacio de Hilbert \(T:H\to H\) está acotado por abajo 
+                si existe  un \(\varepsilon >0 \) tal que para todo \(x\in H\)
+                \[
+                \|Tx\| \geq \varepsilon \|x\|
+                \]
+            </p>
+            <p>
+                Observación: si \(T\) está acotada por abajo entonces \(T\) es inyectiva.
+            </p>
+
+        </div>
+
+
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador acotado actuando en un espacio de Hilbert. 
+            </p>
+            <p>
+                \(T\) es invertible en \(\mathbb{B}(H)\) sii \(T\) está acotado por abajo y 
+                \(T\) tiene rango denso.
+            </p>
+
+        </div>
+        
+
+        <div class="prop-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Sea \(T:H\to H\) un operador acotado tal que \(T\) y \(T^*\) están acotados por 
+                abajo. Entonces \(T\) es invertible en \(\mathbb{B}(H)\).
+            </p>
+        </div>
+
+
+        <div class="definicion-box"> 
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador acotado actuando en un espacio de Hilbert.
+                El espectro de \(T\) se define como 
+                \[
+                \sigma(T):=\{\lambda \in \mathbb{C}: T-\lambda I \ \textrm{no es invertible en }\ \mathbb{B}(H) \}
+                \]
+                El complemento del espectro se llama la resolvente 
+                \[
+                \rho(T)=\{\lambda \in \mathbb{C}: T-\lambda I \ \textrm{es invertible en }\ \mathbb{B}(H) \}
+                \]
+            </p>
+
+        </div>
+
+        <div class="prop-box"> 
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador lineal acotado. Para todo \(\lambda \in \mathbb{C}\)
+                con \(|\lambda| > \|T\|\) se tiene que \(T-\lambda I\) es invertible. Es más 
+                \[
+                (T-\lambda I)^{-1}=-\sum_{n=0}^\infty \frac{1}{\lambda ^{n+1} }T^n
+                \]
+            </p>
+
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Sea \(T:H\to H\) un operador lineal acotado actuando en un espacio de Hilbert. Entonces 
+                \[
+                \sigma(T)\subseteq D_{\|T\|}(0)=\{z\in \mathbb{C}: |z|\leq \|T\|\}.
+                \]
+            </p>
+
+        </div>
+
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador lineal acotado actuando en un espacio de Hilbert.
+            </p>
+            <p>
+                Si \(T\) es autoadjunto entonces \(\sigma(T)\subseteq \mathbb{R}\).
+            </p>
+            <p>
+                Si \(T\) es positivo entonces \(\sigma(T)\subseteq [0,+\infty)\).
+            </p>
+
+        </div>
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definicióm </h2>
+            <p> 
+                Sea \((X,\Sigma, \mu)\) un espacio de medida \(\sigma\)-finito.
+            </p>
+            <p>
+                Para \(g\in L_\infty(X)\) definimos el rango escencial de \(g\), denotado 
+                \(\mathcal{R}(g)\) como 
+                \[
+                \mathcal{R}(g)=\{\lambda \in \mathbb{C}: \mu(\{x\in X: |g(x)-\lambda| < \varepsilon \})>0 
+                \ \textrm{para todo} \ \varepsilon >0 \}
+                \]
+                Notamos que \(\{x\in X: |g(x)-\lambda| < \varepsilon \}=g^{-1}(D_\varepsilon(\lambda))\) asi que 
+                podemos escribir el complemento de \(\mathcal{R}(g)\) como 
+                \[
+                \mathcal{R}(g)^c=\{\lambda \in \mathbb{C}: \mu(g^{-1}(D_\varepsilon(\lambda))=0, \textrm{para algún } \ \varepsilon >0\}
+                \]
+            </p>
+            
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Para \(g\in L_\infty(X)\), \(\mathcal{R}(g)\) es compacto y 
+                \(
+                \|g\|_\infty=\sup_{\lambda \in \mathcal{R}(g)}\{|\lambda|\}.
+                \)
+            </p>
+
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición</h2>
+            <p>
+                Sea \(g\in L_\infty(X)\) y \(M_g:L_2(X)\to L_2(X)\) por 
+                \(M_g(f)=gf\). Entonces \[\sigma(M_g)=\mathcal{R}(g)\]
+            </p>
+
+        </div>
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(T:H\to H\) un operador lineal acotado actuando en un espacio de Hilbert.
+                El radio espectral de \(T\) se define como 
+                \[
+                r(T)=\sup_{\lambda \in \sigma(T)}\{|\lambda|\}.
+                \]
+                Ya que \(\sigma(T)\subseteq D_{\|T\|}(0)\), \(r(T)\leq \|T\|\).
+            </p>
+            <p>
+                El rango numérico de \(T\) se define como 
+                \[
+                    W(T)=\{\langle Tx, x \rangle: x\in H, \|x\| = 1\}
+                \]
+                y 
+                \[
+                    w(T)=\sup_{\lambda \in W(T)}\{|\lambda|\}.
+                \]
+            </p>
+            <p>
+                Observaciones.
+                <ol>
+                    <li>
+                        \(W(T^*)=\overline{W(T)}\).
+                    </li>
+                    <li>
+                        \(w(T^*)=w(T)\).
+                    </li>
+                    <li>
+                        \(T=T^*\) sii \(W(T)\subseteq \mathbb{R}\).
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición</h2>
+            <p>
+                Sea \(T:H\to H\) lineal acotado. Entonces 
+                \[
+                \sigma(T)\subseteq \overline{W(T)}.
+                \]
+                Además 
+                \[
+                    r(T)\leq w(T)\leq \|T\|
+                \]
+            </p>
+
+        </div>
+
+        <div class="info-box">
+            <h2 class="number-title"> Ejemplo </h2>
+            <p>
+                Sea \(T:\mathbb{C}^2 \to \mathbb{C}^2\) dado por 
+                \[
+                T=\left[ 
+                \begin{array}{cc}
+                0 & 0 \\
+                1 & 0
+                \end{array}
+                \right]
+                \]
+            </p>
+            <p>
+                Entonces 
+                <ul>
+                    <li>
+                        \(\sigma(T)=\{0\}\), \(r(T)=0\).
+                    </li>
+                    <li>
+                        \(\|T\|=1\).
+                    </li>
+                    <li>
+                        \(W(T)= \{\lambda \in \mathbb{C}: |\lambda|\leq \frac{1}{2} \), \(w(T)=\frac{1}{2}\).
+                    </li>
+                    
+                </ul>
+            </p>
+        </div>
+</body>
