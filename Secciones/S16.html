@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 15 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 15 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 16  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Operadores (no) acotados </h1>     
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sean \(H\) y \(K\) espacios de Hilbert. Una relación lineal en \(H\times K\)
+            es simplemente un subespacio \(A\leq H\times K\).
+        </p>
+
+        <p>
+            Para una relación lineal \(A\) definimos 
+            <ol>
+                <li>
+                    el domino:
+                    \[
+                    D(A)=\{x\in H: \textrm{existe} \  y\in K, \ (x,y)\in A\}
+                    \]
+                </li>
+                <li>
+                    el rango:
+                    \[
+                    R(A)=\{y\in K: \textrm{existe} \  x\in H, \ (x,y)\in A\}
+                    \]
+                </li>
+                <li>
+                    el núcleo:
+                    \[
+                    N(A)=\{x\in H: (x,0)\in A\}
+                    \]
+                </li>
+                <li>
+                    la parte multivaluada
+                    \[
+                    M(A)=\{y\in K: (0,y)\in A\}
+                    \]
+                </li>
+            </ol>
+        </p>
+        <p>
+            Observación: \(D(A),R(A),N(A)\) y \(M(A)\) son subespacios.
+        </p>
+        <p>
+            Notamos que Si \(A \leq H\times K\) es una relación lineal entonces su cerradura 
+            \(\overline{A}\) también es una relación lineal en \(H\times K\). Decimos que 
+            \(A\) es cerrada sii \(A=\overline{A}\).
+        </p>
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Si \(A\leq H\times H\) es una relación lineal definimos 
+            <ol>
+                <li>
+                    la relación inversa como 
+                    \[
+                    A^{-1}=\{(y,x)\in H\times H: (x,y)\in A\}
+                    \]
+                </li>
+                <li>
+                    la relación adjunta como 
+                    \[
+                    A^*=\{(\tilde{x},\tilde{y}): \langle y,\tilde{x}\rangle = \langle x, \tilde{y} \rangle, 
+                    \ \textrm{para todo}\ (x,y)\in A \}
+                    \]
+                </li>
+            </ol>
+            
+        </p>
+        <p>
+            Es directao probar que \(A^{-1}\) y \(A^*\) son nuevamente realciones lineales.
+        </p>
+        <p>
+            Nota que a diferencia de los operadores lineales la relación inversa siempre existe.
+        </p>
+
+    </div>
+
+    <div class="info-box">
+        <h2 class="number-title"> Ejemplo </h2>
+        <p>
+            Si \(T:H\to K\) es una función lineal entonces su gráfica 
+            \[
+            G(T)=\{(x,Tx): x\in H\}
+            \]
+            es una relación lineal en \(H\times K\). Ademås 
+            <ol>
+                <li>
+                    \(D(G(T))=H\)
+                </li>
+                <li>
+                    \(R(G(T))=\textrm{ran}(T)\)
+                </li>
+                <li>
+                    \(N(G(T))=\ker(T)\)
+                </li>
+                <li>
+                    \(M(G(T))=\{0\}\)
+                </li>
+            </ol>
+        </p>
+        <p>
+            Además, por el Teorema de la Gráfica Cerrda \(G(T)\) es cerrada 
+            sii \(T\) es acotado. Por lo tanto para 
+            relaciones lineales la cerradura se puede considerar como el 
+            substituto de la continuidad. 
+        </p>
+        <p>
+            También notamos que si \(T\) es acotado entonces \((G(T))^*=G(T^*))\) y si 
+            \(T\) es biyectiva \((G(T))^{-1}=G(T^{-1})\).
+        </p>
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Dadas dos relaciones lineales \(A,B \leq H\times K\) y \(a\in \mathbb{C}\)
+            definimos 
+            \begin{eqnarray*} 
+            aA &:= &\{(x,ay): (x,y)\in A\} \\ 
+            A+B &:= & \{(x,y+z): (x,y)\in A, (x,z)\in B\}.
+            \end{eqnarray*}
+        </p>
+        <p>
+            Si \(A\leq H\times K\) y \(B\leq K\times L\) definimos su composición (o producto) como 
+            \[
+            BA=\{(x,z): \textrm{existe} \ y\in K,\ (x,y)\in A, (y,z)\in B \}
+            \]
+        </p>
+        <p>
+            De manera directa se prueba que \(D(A+B)=D(A)\cap D(B)\), que \(A+B=B+A\)
+            y \((A+B)+C=A+(B+C)\).
+        </p>
+        <p>
+            Observación: para \(\lambda \in \mathbb{C}\), \(D(A+\lambda I)=D(A)\)
+            \[
+            A+\lambda I=\{(x,y+\lambda z): (x,y)\in A, z\in H\}
+            \]
+        </p>
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sean \(A\leq H\times K\) una realción linneal. Entonces 
+            \(M(A)=\{0\}\) sii existe \(D\leq H\) y \(T:D\to K\) lineal con 
+            \(A=G(T)\).
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Lema </h2>
+        Sea \(H\) un espacio de Hilbert. Definimos \(W:H\times H \to H\times H\)
+        por \(W(x,y)=(-y,x)\). Entonces 
+        <ol>
+            <li>
+               Para todos \(x,y,x',y'\in H\), 
+               \[\langle W(x,y), W(x',y') \rangle = \langle (x,y),(x',y')\rangle. \]
+            </li>
+            <li>
+                Si \(A \leq H\times H\) es una relación lineal entonces 
+                \[
+                (W(A))^\perp= A^*.
+                \]
+            </li>
+        </ol>
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sea \(A\leq H\times H\) una relación lineal. Entones 
+            <ol>
+                <li>
+                    \((A^*)^*=\overline{A}\).
+                </li>
+                <li>
+                    \((D(A))^\perp = M(A^*)\).
+                </li>
+                <li>
+                    \((D(A^*))^\perp = M(\overline{A})\).
+                </li>
+            </ol>
+        </p>
+
+    </div>
+
+
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(A \leq H\times H\) una relación lineal.
+        </p>
+        <ol>
+            <li>
+                Decimos que \(A\) es simétrica sii \(A\leq A^*\). 
+            </li>
+            <li>
+                \(A\) se llama autoadjunto sii \(A=A^*\).
+            </li>
+        </ol>
+        <p>
+            Observamos que \(A\leq A^*\) sii para todos \((x,y),(\tilde{x},\tilde{y})\in A\),
+            \(\langle y,\tilde{x}\rangle = \langle x ,\tilde{y} \rangle\). Además 
+            \(A^*\leq A\) sii siempre que \(\langle y, \tilde{x}\rangle = \langle x, \tilde{y} \rangle\)
+            para todo \((x,y)\in A\) necesariamente se tiene que \((\tilde{x},\tilde{y})\in A\).
+        </p>
+    </div>
+
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(A\leq H\times H\) una relación lineal. El conjunto resolvente de \(A\) se 
+            define como 
+            \[
+            \rho(A)=\left\{\lambda\in \mathbb{C}: \textrm{existe} \ T\in \mathbb{B}(H) \ \textrm{tal que } (A-\lambda I)^{-1}=G(T) \right\}
+            \]
+            El espectro de \(A\) se define como 
+            \[
+            \sigma(A)=\mathbb{C}\setminus \rho(T).
+            \]
+            Observación: si \(T\in \mathbb{B}(H)\) el espectro de \(G(T)\) es simplemente 
+            el espectro de \(T\).
+        </p>
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Un operador parcialmente definido de \(H\) en \(K\) es una relación lineal 
+            \(A\leq H\times K\) tal que \(M(A)=\{0\}\). Es decir, \(A\) es un operador 
+            parcialmente definido sii \(A=G(T)\) donde \(D\leq H\) y 
+            \(T:D\to K\) es lineal.
+        </p>
+
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(G(T)\leq H\times K\) un operador parcialmente definido. Decimos que 
+            \(T\) es cerrable (ó pre-cerrado) si \(\overline{G(T)}\) es un operador 
+            parcialemte definido, es decir existe \(D_0\leq H\), 
+            \(T_0:D_0\to K\) tal que \(\overline{G(T)}=G(T_0)\). En éste caso 
+            decimos que \(T_0\) es una extensión cerrada de \(T\).
+        </p>
+
+    </div>
+
+    <div class="info-box">
+        <h2 class="number-title"> Ejemplo</h2>
+        <p>
+            Sea \(H\) un espacio de Hilbert con \(\dim(H)=\aleph_0\). Sea \(\{e_n\}_{n=1}^\infty\)
+            una base ortonormal de \(H\). Denotamos 
+            \[
+            D=\left\{ \sum_{n=1}^N a_n e_n: N\in \mathbb{N}, a_n\in \mathbb{C} \right\}
+            \]
+            y definimos \(T:D\to H\) por 
+            \[
+            T\left( \sum_{n=1}^N a_ne_n \right)=\sum_{n=1}^N na_n e_1
+            \]
+            Entonces \(G(T)\) no es cerrable. En más si definimos \(x_n=\frac{1}{n}e_n\)
+            entonces \((x_n,e_1)\in G(T)\) y \(\lim_{n\to \infty}(x_n,e_1)=(0,e_1)\in \overline{G(T)}\).
+            Por lo tanto, si \(\overline{G(T)}=G(T_0)\) entonces \(e_1=T_0(0)=0\), una contradicción.
+        </p>
+        <p>
+            Si \(A=G(T)^*\) entonces \(D(A^*)=(e_1)^\perp, R(A^*)=\{0\}, A^*=(e_1)^\perp\times \{0\}\).
+        </p>
+
+    </div>
+</body>
