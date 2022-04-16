@@ -69,6 +69,10 @@
 
         <h1 class="number-title flexbox"> Operadores (no) acotados </h1>     
 
+        </header>
+
+      <!-- This part is for title in tab-->
+
     <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
         <p>
@@ -137,14 +141,23 @@
             
         </p>
         <p>
-            Es directo probar que \(A^{-1}\) y \(A^*\) son nuevamente realciones lineales.
-        </p>
-        <p>
-            Observación: si \(A,B \leq H\times H\) son relaciones lineales con 
-            \(A\leq B\) entonces \(B^*\leq A^*\).
-        </p>
-        <p>
             Nota que a diferencia de los operadores lineales la relación inversa siempre existe.
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Lema</h2>
+        <p>
+            Para \(A,B \leq H\times K\) relaciones lineales se cumplen:
+            <ol>
+                <li>
+                    \(A^{-1}\) y \(A^*\) son nuevamente realciones lineales.
+                </li>
+                <li>
+                    Si \(A\leq B\) entonces \(B^*\leq A^*\).
+                </li>
+            </ol> 
         </p>
 
     </div>
@@ -212,6 +225,17 @@
         </p>
     </div>
 
+    <div class="prop-box">
+        <h2 class="number-title"> Lema</h2>
+        <p>
+            Sea \(A\leq H\times K\) una relación lineal y \(\lambda\in \mathbb{C}\). Entonces 
+            \[
+            (A+\lambda I)^*=A^*+\overline{\lambda}I
+            \]
+        </p>
+
+    </div>
+
 
     <div class="prop-box">
         <h2 class="number-title"> Proposición </h2>
@@ -263,45 +287,7 @@
 
 
 
-    <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>
-            Sea \(A \leq H\times H\) una relación lineal.
-        </p>
-        <ol>
-            <li>
-                Decimos que \(A\) es simétrica sii \(A\leq A^*\). 
-            </li>
-            <li>
-                \(A\) se llama autoadjunto sii \(A=A^*\).
-            </li>
-        </ol>
-        <p>
-            Observamos que \(A\leq A^*\) sii para todos \((x,y),(\tilde{x},\tilde{y})\in A\),
-            \(\langle y,\tilde{x}\rangle = \langle x ,\tilde{y} \rangle\). Además 
-            \(A^*\leq A\) sii siempre que \(\langle y, \tilde{x}\rangle = \langle x, \tilde{y} \rangle\)
-            para todo \((x,y)\in A\) necesariamente se tiene que \((\tilde{x},\tilde{y})\in A\).
-        </p>
-    </div>
-
-
-    <div class="definicion-box">
-        <h2 class="number-title"> Definición </h2>
-        <p>
-            Sea \(A\leq H\times H\) una relación lineal. El conjunto resolvente de \(A\) se 
-            define como 
-            \[
-            \rho(A)=\left\{\lambda\in \mathbb{C}: \textrm{existe} \ T\in \mathbb{B}(H) \ \textrm{tal que } (A-\lambda I)^{-1}=G(T) \right\}
-            \]
-            El espectro de \(A\) se define como 
-            \[
-            \sigma(A)=\mathbb{C}\setminus \rho(T).
-            \]
-            Observación: si \(T\in \mathbb{B}(H)\) el espectro de \(G(T)\) es simplemente 
-            el espectro de \(T\).
-        </p>
-    </div>
-
+    
     <div class="definicion-box">
         <h2 class="number-title"> Definición </h2>
         <p>
@@ -319,8 +305,13 @@
             Sea \(G(T)\leq H\times K\) un operador parcialmente definido. Decimos que 
             \(T\) es cerrable (ó pre-cerrado) si \(\overline{G(T)}\) es un operador 
             parcialemte definido, es decir existe \(D_0\leq H\), 
-            \(T_0:D_0\to K\) tal que \(\overline{G(T)}=G(T_0)\). En éste caso 
-            decimos que \(T_0\) es una extensión cerrada de \(T\).
+            \(T_0:D_0\to K\) tal que \(\overline{G(T)}=G(T_0)\). .
+        </p>
+        <p>
+            En éste caso el operador \(T_0\) es único pues si existe 
+            \(T_1:D_1 \leq H \to K\) lineal con \(G(T_1)=\overline{G(T)}\) 
+            entonces \(G(T_0)=G(T_1)\) por lo tanto \(D_0=D_1\) y \(T_0=T_1\). Llamamos
+            a \(T_0\) la cerradura de \(T\) y la denotamos por \(\overline{T}\).
         </p>
 
     </div>
@@ -383,5 +374,20 @@
 
     </div>
 
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sea \(T:D\leq H \to H\) un operador lineal densamente definido. Entonces 
+            <ol>
+                <li>
+                    Si \(T\) es cerrable entonces \(\overline{G(T)}^*=G(T^*)\).
+                </li>
+                <li>
+                    \(T\) es cerrable sii \(D(T^*)\) es denso en \(H\).
+                </li>
+            </ol>
+        </p>
+
+    </div>
 
 </body>

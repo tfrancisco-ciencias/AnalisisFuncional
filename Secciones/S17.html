@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 16 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 16 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 17  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Operadores autoadjuntos </h1>     
+
+
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(A \leq H\times H\) una relación lineal.
+            </p>
+            <ol>
+                <li>
+                    Decimos que \(A\) es simétrica sii \(A\leq A^*\). 
+                </li>
+                <li>
+                    \(A\) se llama autoadjunto sii \(A=A^*\).
+                </li>
+            </ol>
+            <p>
+                Observamos que \(A\leq A^*\) sii para todos \((x,y),(\tilde{x},\tilde{y})\in A\),
+                \(\langle y,\tilde{x}\rangle = \langle x ,\tilde{y} \rangle\). Además 
+                \(A^*\leq A\) sii siempre que \(\langle y, \tilde{x}\rangle = \langle x, \tilde{y} \rangle\)
+                para todo \((x,y)\in A\) necesariamente se tiene que \((\tilde{x},\tilde{y})\in A\).
+            </p>
+        </div>
+    
+    
+    
+
+        <div class="prop-box"> 
+            <h2 class="number-title"> Lema </h2>
+            <p>
+                Sea \(R:H\to H\) un operador lineal acotado, con \(\ker(R)=\{0\}\)
+                y \(R=R^*\). Entonces \(\operatorname{ran}(R)\) es denso en \(H\).
+            </p>
+
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Lema</h2>
+            <p>
+                Sea \(T:D\leq H \to H\) densamente definido y cerrado. Sea 
+                \(W:H\times H \to H\times H\) dada por \(W(x,y)=(-y,x)\). Entonces 
+                \[
+                    W(G(T^*))^{\perp}=G(T)
+                \]
+            </p>
+
+        </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema  </h2>
+            <p>
+                Sea \(T:D\leq H \to H\) un operador lineal densamente definido y cerrado.Entonces 
+                <ol>
+                    <li>
+                        \(TT^*+I: D(T^*T) \leq H \to H\) es biyección con inversa acotada.
+                    </li>
+                    <li>
+                        \(T^*T\) está densamente definido y es auto-adjunto.
+                    </li>
+                </ol>
+            </p>
+
+        </div>
+
+
+
+ </body>       

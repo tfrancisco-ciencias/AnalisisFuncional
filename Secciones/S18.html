@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 17 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 17 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 18  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> La transformada de Caley </h1>     
+
+
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Sea \(A\leq H\times H\) una relación lineal. El conjunto resolvente de \(A\) se 
+                define como 
+                \[
+                \rho(A)=\left\{\lambda\in \mathbb{C}: \textrm{existe} \ T\in \mathbb{B}(H) \ \textrm{tal que } (A-\lambda I)^{-1}=G(T) \right\}
+                \]
+                El espectro de \(A\) se define como 
+                \[
+                \sigma(A)=\mathbb{C}\setminus \rho(T).
+                \]
+                Observación: si \(T\in \mathbb{B}(H)\) el espectro de \(G(T)\) es simplemente 
+                el espectro de \(T\).
+            </p>
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Lema</h2>
+            <p>
+                Sea \(T:D\leq H \to H\) un operdor lineal densamente definido y 
+                \(\lambda \in \mathbb{C}\) con \(\Im(\lambda)\ne 0\) entonces:
+            </p>
+
+            <ol>
+                <li>
+                    Si \(T\) es simétrico 
+                    entonces para todo \(x\in D\),
+                    \[
+                    \| (T-\lambda I)x \| \geq |\Im(\lambda)|\|x\|.
+                    \]
+                </li>
+                <li>
+                    Si \(T\) es cerrado y simétrico  entonces \(T-\lambda I\) está acodado por 
+                    abajo y tiene rango denso.
+                </li>
+                <li>
+                    Si \(T=T^*\)  entonces \((T-\lambda I)^{-1}\) es un opeador lineal 
+                    acotado en \(H\). Es decir \(\sigma(T)\subseteq \mathbb{R}\).
+                </li>
+            </ol>
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(T:D \leq H \to H\) operador lineal densamente definido. Si \(T=T^*\) entonces 
+                \[
+                c(T)=(T+iI)(T-iI)^{-1}
+                \]
+                es un operador acotado en \(H\), es unitario con \(1\notin \sigma(c(T))\).
+            </p>
+            <p>
+                El operador \(c(T)\) se llama la transformada de Caley de \(T\).
+            </p>
+
+        </div>
+
+</body>       
