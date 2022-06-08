@@ -20,7 +20,8 @@
         tex: {
           macros: {
             span: "\\operatorname{span}",
-            seg: ["\\overrightarrow{#1}", 1]
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
           },
           tags: "ams" /* this part is for numbered equations */
         }
@@ -63,7 +64,7 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> § 13  </title>
+      <title> § 14  </title>
 
 <body class="fondo-body">
 
@@ -228,5 +229,56 @@
                     pero no tiene valores propios.
                 </li>
             </ol>
+        </div>
+
+        <div class="nota-box">
+            <h2 class="number-title"> Nota </h2>
+            <h3> El adjunto </h3>
+            <p>
+                En esta nota se explora la relación del adjunto en espacios 
+                de Hilbert con el adjunto en espacios de Banach.
+            </p>
+            <p>
+                En esta sección dado \(X\) un espacio de Banach denotamos 
+                \[
+                X^\#=\{ \varphi: X\to\mathbb{C}: \varphi \quad \textrm{es lineal y acotada} \}
+                \]
+            </p>
+            <p>
+                Dado un operador lineal acotado entre espacios de Banach \(T:X\to Y\)
+                definimos \(T^\#: Y^\# \to X^\#\) por \(T\psi = \psi \circ T\).
+            </p>
+            <p>
+                Si \(X\) es un espacio de Hilbert el Teorema de representación de Riesz prueba que la función 
+                \(J:X\to X^\#\) dada por \(z\mapsto J_z\) con \(J_z: X \to \mathbb{C}\)
+                \(J_z=\langle x, z \rangle\) satisface 
+                <ol>
+                    <li>
+                        \(J_{z_1+\alpha z_2}=J_{z_1}+\overline{\alpha}J_{z_2}\),
+                    </li>
+                    <li>
+                        \(\|J_z\|=\|z\|\), 
+                    </li>
+                    <li>
+                        \(J\) es una biyección.
+                    </li>
+                </ol>
+                Nota que con la notación anterior se cumple 
+                \[
+                \langle  x,J^{-1}(\varphi)\rangle = \langle x,z \rangle
+                \]
+            </p>
+            <p>
+                La relación entre los adjuntos es que el siguiente diagrama 
+                conmuta
+                \begin{matrix} 
+                Y^\# & \underset{T^\#}{\rightarrow} & X^\#  \\
+                \uparrow \small{J} & & \downarrow \small{J^{-1}}\\
+                 Y  & \underset{T^*}{\rightarrow}  &  X
+                \end{matrix}
+            </p>
+            <p>
+                donde \(T^*\) es el adjunto en espacios de Hilbert.
+            </p>
         </div>
 </body>

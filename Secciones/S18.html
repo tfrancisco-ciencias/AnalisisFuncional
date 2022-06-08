@@ -20,7 +20,8 @@
         tex: {
           macros: {
             span: "\\operatorname{span}",
-            seg: ["\\overrightarrow{#1}", 1]
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
           },
           tags: "ams" /* this part is for numbered equations */
         }
@@ -67,7 +68,7 @@
 
 <body class="fondo-body">
 
-        <h1 class="number-title flexbox"> La transformada de Caley </h1>     
+        <h1 class="number-title flexbox"> El espectro de operadores (no) acotados </h1>     
 
 
 
@@ -129,4 +130,72 @@
 
         </div>
 
+
+        <div class="nota-box">
+          <h2 class="number-title"> Nota </h2>
+          <p>
+            Definimos \(f:\mathbb{R} \to \mathbb{C}\) por 
+            \[
+            f(t)=\frac{t+i}{t-i}
+            \]
+            Entonces \(f\) es una biyección entre \(\mathbb{R}\)
+            y \(\mathbb{S}^1\setminus \{1\}\). Podemos pensar la transformada 
+            de Caley de \(T\) como \(f(T)\).
+          </p>
+          <p>
+            Un cálculo directo muestra 
+            \[
+              f^{-1}(z)=i\frac{z+1}{z-1}
+            \]
+            lo cual sugiere la existencia de la inversa de la transformada de Caley.
+          </p>
+
+        </div>
+
+        <div class="prop-box">
+          <h2 class="number-title"> Proposición </h2>
+          <p>
+            Sea \(U:H\to H\) un operador unitario tal que 
+            \(1\) no es valor propio de \(U\). Entonces 
+          </p>
+          <ol>
+            <li>
+              \(U-I\) es inyectivo y tiene rango denso. 
+            </li>
+            <li>
+              El operador parcialmente definido 
+              \[
+              i(U+I)(U-I)^{-1}:\ran(U-I) \to H
+              \]
+              es autoadjunto.
+            </li>
+          </ol>
+          <p>
+            Definimos \(c^{-1}(U)=i(U+I)(U-I)^{-1}\).
+          </p>
+
+        </div>
+
+        <div class="prop-box">
+          <h2 class="number-title"> Proposición</h2>
+          <p>
+            La transformada de Caley satisface: 
+          </p>
+          <ol>
+            <li>
+              Si \(T:D\leq H \to H\) está densamente definido  y \(T=T^*\) entonces 
+              \[
+              c^{-1}(c(T))=T.
+              \]
+            </li>
+            <li>
+              Si \(U:H\to H\) es unitario y \(1\) no es valor propio de 
+              \(U\) entonces 
+              \[
+              c(c^{-1}(U))=U.
+              \]
+            </li>
+          </ol>
+
+        </div>
 </body>       

@@ -20,7 +20,8 @@
         tex: {
           macros: {
             span: "\\operatorname{span}",
-            seg: ["\\overrightarrow{#1}", 1]
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
           },
           tags: "ams" /* this part is for numbered equations */
         }
@@ -142,6 +143,23 @@
     </div>
 
     <div class="ejercicio-box">
+        <h2 class="number-title"> Lema</h2>
+        <h3> Identidad de polarización</h3>
+        <p>
+            Dado \(L :H\to H\) cualquier función lineal se cumple  
+            \begin{eqnarray*}
+            4 \langle  Lx,y \rangle &=&
+            \langle L(x+y),x+y\rangle \\
+            &-&\langle L(x-y), x-y\rangle \\
+            &+& i \langle L(x+iy),x+iy\rangle \\
+            &-& i\langle L(x-iy), x-iy\rangle    
+            \end{eqnarray*}
+            para todos \(x,y\in H\).
+        </p>
+
+    </div>
+
+    <div class="ejercicio-box">
         <h2 class="number-title"> Lema </h2>
         <p>
             Sean \(H\) y \(K\) espacios con producto interior positivo definido 
@@ -219,25 +237,19 @@
 
     </div>
 
-    <div class="nota-box">
-        <h2 class="number-title"> Clases de operadores </h2>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
         <p>
-            Sean \(H\) un espacio de Hilbert y \(T:H\to H\) lineal acotada.
+            Dado un operador \(T:H\to H\) denotamos 
+            \(\ker(T)=\{x\in H: Tx=0\}\), \(\ran(T)=\{Tx: x\in H\).
         </p>
-        <ol>
-            <li>
-                \(T\) es autoadjunto sii \(T=T^*\).
-            </li>
-            <li>
-                \(T\) es unitario sii \(T^*T=I=TT^*\).
-            </li>
-            <li>
-                \(T\) se llama normal sii \(TT^*=T^*T\).
-            </li>
-            <li>
-                \(T\) se llama positivo si existe \(S:H\to H\) lineal acotada  tal que 
-                \(T=S^*S\).
-            </li>
-        </ol>
+        <p>
+            Para todo operador acotado \(T:H\to H\) se cumple 
+            \[
+                \ker(T)=\ran(T^*)^\perp, \quad \ker(T^*)=\ran(T)^\perp 
+            \]
+        </p>
+
     </div>
 </body>
