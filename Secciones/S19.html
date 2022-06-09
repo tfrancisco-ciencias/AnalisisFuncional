@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 18 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 18 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 19  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Algebras de Banach </h1>
+  
+        
+  <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+      Una álgebra sobre el campo \(\mathbb{F}\) es un espacio 
+      vectorial sobre \(\mathbb{F}\), \(A\), dotada de una 
+      multiplicación 
+      \begin{eqnarray*} 
+      A\times A \to  A \\
+      (a,b)\mapsto ab 
+      \end{eqnarray*}
+      que satisface 
+      <ol>
+        <li> 
+          asociatividad: \((ab)c=a(bc)\),
+        </li>
+        <li>
+          distributividad con respecto a la suma:
+          \(a(b+c)=ab+ac\), \((b+c)a=ba+ca\). 
+        </li>
+        <li>
+          Compatibilidad con el producto escalar:
+          \(z(ab)=(za)b=a(zb) \), \(z\in \mathbb{F}\).
+        </li>
+      </ol>
+      En lo sucesivo siempre tabajaremos con el campo 
+      \(\mathbb{F}=\mathbb{C}\).
+    </p>
+    <p>
+      Una álgebra \(A\) se llama noramda si está dotada 
+      cun una norma \(\| \cdot\|: A \to [0,\infty) \)
+      que satisface 
+      \[
+      \|ab\| \leq \|a\| \|b\|
+      \]
+      para todos \(a,b\in A\).
+    </p>
+    <p>
+      Si el álgebra tiene uno, \(\mathbb{1}_A\), además pedimos que 
+      \(\|\mathbb{1}_A\|=1\). 
+    </p>
+    <p>
+      Si además  \(A\) es un espacio de Banach decimos que 
+      el álgebra normada es una álgebra de Banach.
+    </p>
+  </div>      
+
+  <div class="nota-box">
+    <h2 class="number-title"> Ejemplos </h2>
+    <ol>
+      <li>
+        Si \(X\) es un espacio compacto y consideramos 
+        \[
+        A=C(X)=\{f:X\to \mathbb{C}: \textrm{\(f\) es continua }\}
+        \]
+        con las operaciones usuales de funciones y con la norma 
+        \[
+        \|f\|=\sup_{x\in X}\{|f(x)|\}
+        \]
+        \(C(X)\) es una álgebra de Banach conmutativa con 1.
+      </li>
+      <li>
+        Sea \(H\) un espacio de Hilbert y denotemos 
+        \[
+        \mathbb{B}(H)=\{T:H\to H: \textrm{\(T\) es acotada}\}
+        \]
+        Con el producto dado por la composición y la norma 
+        de operadores 
+        \[
+        \|T\|=\sup_{x\in H, \|x\|\leq 1}\{ \|Tx\| \}
+        \]
+        \(\mathbb{B}(H)\) es una álgebra de Banach con 1.
+      </li>
+    </ol>
+
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+      Sea \(A\) una álgebra normada. La función producto 
+      \(A\times A \to A\) es continua.
+    </p>
+
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Sea \(A\) una álgebra de Banch con 1. Si \(a\in A\)
+      y \(\| \mathbb{1}_A - a\| < 1\) entonces \(a\) es invertible.
+      Además 
+      \[
+      \|a^{-1}\| \leq \frac{1}{1-\|\mathbb{1}_A-a\|}
+      \] 
+
+    </p>
+
+  </div>
+
+  <div class="nota-box">
+    <h2 class="number-title"> Notación </h2>
+    <p>
+      Denotamos 
+      \begin{eqnarray*}
+      G&=&\{ a\in A: \textrm{\(a\) es invertible en \(A\)}\},\\
+      G_r&=&\{ a\in A: \exists a' \in A, aa'=\mathbb{1}_A   \},\\
+      G_l&=&\{ a\in A: \exists a' \in A, a'a=\mathbb{1}_A \},\\
+      \end{eqnarray*}
+    </p>
+
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Para una álgebra de Banach, \(G,G_r\)  y \(G_l\)
+      son abiertos.
+    </p>
+
+  </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Corolario</h2>
+    <p>
+      Si \(A\) es una álgebra de Banach con 1, la función 
+      \begin{eqnarray*} 
+      G\mapsto G \\
+      a\mapsto a^{-1}
+      \end{eqnarray*}
+      es continua. Por lo tanto \(G\) es un grupo topológico.
+    </p>
+
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Sea \(A\) una álgebra de Banach con 1. Denotemos 
+      por \(G_0\) la componente conexa de \(G\) que contiene 
+      a \(\mathbb{1}_A\). 
+    </p>
+    <p>
+      Entonces \(G_0\) es un subgrupo normal de \(G\) que es 
+      abierto y cerrado. Las componentes conexas de \(G\)
+      son las clases de equivalencia de \(G/G_0\) y éste 
+      último es discreto.
+    </p>
+
+  </div>
+
+  <div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+      Sea \(A\) un álgebra de Banach con 1. El mapeo exponencial 
+      de \(A\) se define como 
+      \begin{eqnarray*} 
+      exp:A\to A \\
+      exp(a)=\sum_{n=0}^\infty \frac{a^n}{n!}
+      \end{eqnarray*}
+    </p>
+  </div>
+
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Lema </h2>
+    <p>
+      Si \(ab=ba\) entonces 
+      \[
+      exp(a+b)=exp(a)exp(p)
+      \]
+    </p>
+
+  </div>
+</body>        
