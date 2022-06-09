@@ -69,6 +69,197 @@
 <body class="fondo-body">
 
         <h1 class="number-title flexbox"> Funcionales lineales positivas </h1>
-  
+    
 
+   <div class="definicion-box">
+       <h2 class="number-title"> Definición </h2>
+       <p>
+           Sea \(A\) una álgebra de Banach con 1. Una funcional 
+           lineal, \(\varphi:A \to \mathbb{C}\), se llama  multiplicativa  si 
+           <ol>
+            <li>
+                para todos \(a,b\in A\), \(\varphi(ab)=\varphi(a)\varphi(b)\),
+            </li>
+            <li>
+                \(\varphi(\mathbb{1}_A)=1\).
+            </li>
+           </ol>
+       </p>
+       <p>
+           La condición 2 en la definición anterior es equivalente a que \(\varphi \ne 0\). Razón:
+           \(\varphi \ne 0\)  sii existe \(a_0\in A\) tal que \(\varphi(a_0)\ne 0\) por lo que 
+           \[
+           \varphi(a_0)=\varphi(\mathbb{1}_A a)=\varphi(\mathbb{1}_A)\varphi(a_0) \Rightarrow \varphi(\mathbb{1}_A)=1
+           \]
+       </p>
+       <p>
+           Al conjunto de funcionales lineales multiplicativas lo denotaremos por \(M_A\).
+       </p>
+       <p>
+           Ejemplo.
+       </p>
+       <p>
+        Sea \(X\) un espacio compacto y \(A=C(X)\). Dado \(x_0\in X\) 
+        la funcional lineal \(\varphi: A \to \mathbb{C}\), \(\varphi(f)=f(x_0)\)
+        es lineal multiplicativa. 
+        </p>
+
+   </div>     
+
+
+   <div class="prop-box">
+       <h2 class="number-title"> Proposición </h2>
+       <p>
+           Sea \(A\) una álgebra de Banach con 1. Si \(\varphi \in M_A\) entonces 
+           \(\varphi\) está acotada y \(\|\varphi\|=1\).
+       </p>
+
+   </div>
+
+
+   <div class="prop-box"> 
+       <h2 class="number-title"> Proposición</h2>
+       <p>
+           Sea \(A\) una álgebra de Banach con 1. Entonces \(M_A\) es  un 
+           subconjunto \(\omega^*\)-compacto de \((A^*)_1\).
+       </p>
+
+   </div>
+
+   <div class="prop-box">
+       <h2 class="number-title"> Proposición </h2>
+       <p>
+           Sea \(X\) un espacio compacto Hausdorff. Para toda \(\varphi \in M_{C(X)}\)
+           existe un único \(x_0\in  X\) tal que \(\varphi(f)=f(x_0)\), para toda 
+           \(f\in C(X)\).
+       </p>
+
+   </div>
+
+
+   <div class="nota-box">
+       <h2 class="number-title"> Ejemplo </h2>
+        <p>
+            Para \(n \geq 2\), el álgebra \(M_n(\mathbb{C})\) no tiene 
+            funcionales lineales multiplicativas.
+        </p>
+        <p>
+            En concreto, si \(\varphi: M_n(\mathbb{C})\to \mathbb{C}\) es lineal 
+            y satisface \(\varphi(AB)=\varphi(A)\varphi(B)\), para todos 
+            \(A,B \in M_n(\mathbb{C})\) entonces \(\varphi=0\).
+        </p>
+   </div>
+
+   <div class="definicion-box">
+       <h2 class="number-title"> Definición </h2>
+       <p>
+           Sea \(A\) una álgebra. 
+           <ol>
+               <li>
+                   Un ideal izquierdo de \(A\) es un subespacio vectorial de \(A\), \(I \leq A\), 
+                   que satisface: \(aI \subseteq I\), para toda \(a\in A\).
+               </li>
+               <li>
+                Un ideal derecho de \(A\) es un subespacio vectorial de \(A\), \(I \leq A\), 
+                que satisface: \(Ia \subseteq I\), para toda \(a\in A\).
+            </li>
+            <li>
+                Un ideal bilateral es un ideal izquierdo y dereecho. 
+            </li>
+           </ol>
+       </p>
+       <p>
+           Un ideal \(I \leq A\), (izquierdo, derecho, bilateral) se llama maximal si 
+           <ol>
+               <li>
+                   \(I\ne A\),
+               </li>
+               <li>
+                   Si \(J \leq A \) es un ideal (izquierdo, derecho, bilateral) que satisface 
+                   \(I\leq J\) entonces \(J=I\) ó \(J=A\).
+               </li>
+           </ol>
+       </p>
+
+   </div>
+
+
+   <div class="ejercicio-box">
+       <h2 class="number-title"> Lema </h2>
+       <p>
+        Sea \(A\) una álgebra arbitraria (no necesariamente con 1) y 
+        \(\varphi:A \to \mathbb{C}\) lineal que satisface \(\varphi(ab)=\varphi(a)\varphi(b)\),
+        para todos \(a,b\in A\).
+       </p>
+       <ol>
+           <li>
+               Entonces \(\ker(\varphi)\) es un ideal.
+           </li>
+           <li>
+               Si \(\varphi \ne 0\) entonces \(\ker(\varphi)\) es máximal.
+           </li>
+       </ol>
+
+   </div>
+
+   <div class="prop-box">
+       <h2 class="number-title"> Proposicón </h2>
+       <p>
+           Sea \(A\) una álgebra normada.
+       </p>
+       <ol>
+           <li>
+               Si \(I\leq A\) es un ideal (izquierdo, derecho, bilateral) entonces 
+               \(\overline{I}\) es un ideal (izquierdo, derecho, bilateral).
+           </li>
+           <li>
+               Si \(A\) tiene 1 e \(I\leq A\) es un ideal máximal entonces \(I\) es cerrado.
+           </li>
+           <li>
+               Si \(I\leq A\) es un ideal bilateral cerrado, \(I\ne  A\), entonces el espacio 
+               cociente \(A/I\) con el producto 
+               \[
+               (a+I)(b+I)=ab+I
+               \]
+               es una álgebra normada. Si A tiene uno, \(\mathbb{1}_A+I\) es el uno de 
+               \(A/I\).
+           </li>
+       </ol>
+
+   </div>
+
+   <div class="prop-box">
+       <h2 class="number-title"> Proposicón </h2>
+       <p>
+           Sea \(A\) una álgebra con 1 (no necesariamente conmutativa).  
+       </p>
+       <p>
+           Entonces para todo \(I \leq A\) ideal bilateral propio \(I\neq A\) existe 
+           \(J\leq A\) ideal bilateral maxilam que satisface \(I\leq J\).
+       </p>
+
+   </div>
+
+   <div class="ejercicio-box">
+       <h2 class="number-title"> Corolario </h2>
+       <p>
+           Sea \(A\) una álgebra conmutativa con 1. Sea \(I\leq A\) un ideal bilateral 
+           propio.
+       </p>
+       <p>
+           \(I\) es maximal sii \(A/I\) es un campo.
+       </p>
+
+   </div>
+
+   <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(A\) una álgebra conmutativa con 1.
+        </p>
+        <p>
+            Para todo \(a\in A\) no invertible existe un ideal maximal \(J\leq A\) tal que 
+            \(a\in J\).
+        </p>
+   </div>
 </body>
