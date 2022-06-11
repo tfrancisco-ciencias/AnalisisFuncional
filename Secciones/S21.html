@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 20 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 20 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 21  </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> El espectro </h1>
+    
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición</h2>
+            <p>
+                Sea \(A\) una álgebra con \(1\). Dado un \(a\in A\) su espectro se 
+                define como 
+                \[
+                \sigma_A(a)=\sigma(a)=\{\lambda \in \mathbb{C}: a- \lambda \mathbb{1}_A \quad \textrm{no es invertible en \(A\)} \}
+                \]
+                El radio espectral de \(a\) se define como 
+                \[
+                r_A(a)=r(a)=\sup_{\lambda \in \sigma(a)}\{ |\lambda|\}
+                \]
+                La resolvente de \(a\) se define como 
+                \[
+                \rho_A(a)=\rho(a)=\{\lambda \in \mathbb{C}: a- \lambda \mathbb{1}_A \quad \textrm{es invertible en \(A\)}\}
+                \]
+            </p>
+            <p>
+                Notación: \(a-\lambda = a- \lambda \mathbb{1}_A\).
+            </p>
+
+        </div>
+
+        <div class="nota-box">
+            <h2 class="number-title"> Ejemplos</h2>
+            <ol>
+                <li>
+                    \(A=M_n(\mathbb{C})\). Dada \(a\in A\):
+                    \begin{eqnarray*} 
+                    \lambda \in \sigma(a) &\Leftrightarrow & \det(a-\lambda ) =0 \\
+                    &\Leftrightarrow & \textrm{\(\lambda\) es valor propio de \(a\)}
+                    \end{eqnarray*}
+                </li>
+                <li>
+                    \(X\) espacio compacto Hausdorff, \(A=C(X)\). Para \(f\in A\):
+                    \begin{eqnarray*}
+                    \lambda \in \sigma(f) & \Leftrightarrow & f-\lambda \quad \textrm{ no es invertible en \(C(X)\)} \\
+                    & \Leftrightarrow & \exists x_0\in X, \, (f-\lambda)(x_0)= 0 \\
+                    &\Leftrightarrow & f(x_0)=\lambda \\
+                    & \Leftrightarrow & \lambda \in \operatorname{imagen}(f) &
+                    \end{eqnarray*}
+                </li>
+                Por lo tanto \(\sigma(f)=\operatorname{imagen}(f)\) y \(r(f)=\|f\|_\infty\).
+            </ol>
+
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición</h2>
+            <p>
+                Sea \(A\) una álgebra de Banach con 1. Para todo  \(a\in A\)
+                \(\sigma(a)\) es compacto y \(r(a)\leq \|a\|\).
+            </p>
+
+        </div>
+
+        <div class="ejercicio-box">
+            <h2 class="number-title"> Lema</h2>
+            <h3> La identidad resolvente</h3>
+            <p>
+                Sea \(A\) una álgebra con 1 y \(a\in A\). Dados \(\lambda, \mu \in \rho(a)\):
+                \begin{eqnarray*}
+                (a-\lambda)^{-1}-(a-\mu)^{-1}&=&(\lambda-\mu)(a-\mu)^{-1}(a-\lambda)^{-1}\\
+                &=&(\lambda-\mu)(a-\lambda)^{-1}(a-\mu)^{-1}
+                \end{eqnarray*}
+            </p>
+        </div>
+
+        <div class="prop-box"> 
+            <h2 class="number-title"> Proposición</h2>
+            <p>
+                Sea \(A\) una álgebra de Banach con 1. Para todo \(a\in A\)
+                \(\sigma(a)\) es no vacío.
+            </p>
+
+        </div>
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Una álgebra con 1 se llama con división si todo elemento distinto de cero 
+                es invertible.
+            </p>
+        </div>
+
+        <div class="teorema-box">
+            <h2 class="number-title"> Teorema </h2>
+            <h3> Gelfand-Mazur</h3>
+            <p>
+                Sea \(A\) una álgebra de Banach con división. Entonces 
+                \(A\) es isométricamente isomorfa a \(\mathbb{C}\).
+            </p>
+        </div>
+
+        <div class="prop-box"> 
+            <h2 class="number-title"> Proposición </h2>
+            <p>
+                Sea \(A\) una álgebra de Banach conmutativa con 1.
+            </p>
+            <p>
+                \(M_A\), el conjunto de funcionales lineales multiplicativas, está en 
+                biyección con los ideales máximales de \(A\). En particular \(M_A\ne \emptyset\).
+            </p>
+        </div>
+
+        <div class="definicion-box">
+            <h2 class="number-title"> Definición </h2>
+            <p>
+                Para una álgebra de Banach con 1, tal que \(M_A \ne \emptyset\), la 
+                transformada de Gelfand de \(A\), denotada \(\Gamma_A\) o simplemente 
+                \(\Gamma\), es la función \(\Gamma: A \to C(M_A)\) tal que 
+                a cada \(a\in A\) asigna la función  \(\Gamma_a:M_A\to \mathbb{C}\)
+                dada por \(\Gamma_a(\varphi)=\varphi(a)\).
+            </p>
+            
+
+        </div>
+
+        <div class="prop-box">
+            <h2 class="number-title"> Proposición </h2>
+            <h3> Propiedades de la transformada de Gelfand </h3>
+            <ol>
+                <li>
+                    \(\Gamma:A \to C(M_A)\) es un homomorfismo de álgebras con 1. 
+                </li>
+                <li>
+                    Para toda \(a\in A\), \(\|\Gamma_a\|_\infty \leq \|a\|\).
+                </li>
+                <li>
+                    Si \(A\) es conmutativa: \(a\in A\) es invertible en \(A\) 
+                    sii \(\Gamma_a\) es invertible en \(C(M_A)\).
+                </li>
+            </ol>
+
+        </div>
+
+        <div class="ejercicio-box">
+            <h2 class="number-title"> Corolario</h2>
+            <p>
+                Sea \(A\) una álgebra de Banach conmutativa con 1. Para todo \(a \in A\) se cunmple:
+                \begin{eqnarray*}
+                \sigma(a)&=&\operatorname{imagen}(\Gamma_a) \\
+                r(a)&=&\|\Gamma_a\|_\infty
+                \end{eqnarray*}
+            </p>
+            
+
+        </div>
+
+
+ </body>       
