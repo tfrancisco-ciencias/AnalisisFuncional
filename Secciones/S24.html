@@ -37,10 +37,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
         body.number-title{
-          counter-reset: sectionCounter 22 cardCounter ;
+          counter-reset: sectionCounter 23 cardCounter ;
         }
         h1.number-title{
-          counter-reset: sectionCounter 22 cardCounter ;
+          counter-reset: sectionCounter 23 cardCounter ;
         }
       </style>
   
@@ -72,7 +72,7 @@
 
     <div class="teorema-box">
         <h2 class="number-title"> Teorema </h2>
-        <h3> Teorema espectral (versión funciones continuas)</h3>
+        <h3> Teorema espectral (versión funciones continuas) </h3>
         <p>
             Sea \(H\) un espacio de Hilbert y \(T:H\to H\) un operador lineal, acotado y normal.
             
@@ -134,6 +134,82 @@
     </div>
 
 
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario </h2>
+        <p>
+            Sea \(T:H\to H\) un operador lineal acotado y normal.
+        </p>
+        <ol>
+            <li>
+                \(T \geq 0\) sii \(\sigma(T)\subseteq [0,\infty)\),
+            </li>
+            <li>
+                \(T=T^*\) sii \(\sigma(T)\subseteq \mathbb{R}\).
+            </li>
+        </ol>
+
+    </div>
+
+
+    <div class="nota-box">
+        <h2 class="number-title"> Ejemplo </h2>
+        <p>
+            La hipótesis de normalidad no se puede omitir en el resultado anterior.
+        </p>
+        <p>
+            Por ejemplo en \(M_2(\mathbb{C})\) tomar 
+            \[
+            T=\left[ \begin{matrix}
+                1 & 1  \\
+                0 & 0
+            \end{matrix}
+            \right]
+            \]
+            Entonces \(\sigma(T)=\{0,1\} \subseteq [0,\infty)\), pero \(T\) no es positivo pues 
+            \[
+            \left\langle T \left[ \begin{matrix}
+                x \\ y
+            \end{matrix} \right], \left[ \begin{matrix}
+            x \\
+            y
+            \end{matrix}\right]\right\rangle =|x|+y \overline{x}
+            \]
+            y entonces 
+            \[
+            \left\langle T \left[ \begin{matrix}
+                i \\ 1
+            \end{matrix}\right], \left[ \begin{matrix}
+            i \\
+            1
+            \end{matrix}\right]\right\rangle = 1-i 
+            \]
+        </p>
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(T:H \to H\) un operador positivo. Entonces existe un único 
+            operador \(Q:H\to H\) tal que 
+            \[
+            Q^2=T
+            \]
+            Denotamos \(Q=\sqrt{T}\).
+        </p>
+    </div>
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario </h2>
+        <p>
+            Un operador \(T=H\to H\) es positivo sii existe un operador \(S:H\to H\)
+            tal que \(T=S^*S\).
+        </p>
+
+    </div>
+
+
+
     <div class="ejercicio-box">
         <h2 class="number-title"> Lema </h2>
         <p>
@@ -168,19 +244,4 @@
     </div>
 
 
-    <div class="ejercicio-box">
-        <h2 class="number-title"> Corolario </h2>
-        <p>
-            Sea \(T:H\to H\) un operador lineal acotado y normal.
-        </p>
-        <ol>
-            <li>
-                \(T \geq 0\) sii \(\sigma(T)\subseteq [0,\infty)\),
-            </li>
-            <li>
-                \(T=T^*\) sii \(\sigma(T)\subseteq \mathbb{R}\).
-            </li>
-        </ol>
-
-    </div>
 </body>        
