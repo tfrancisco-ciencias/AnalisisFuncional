@@ -71,6 +71,123 @@
         <h1 class="number-title flexbox">  Descomposición Polar </h1>
 
 
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Un operador lineal acotado \(V:H\to H\) se llama una isometría parcial si 
+            \[
+            \|Vx\|=\|x\|
+            \]
+            para todo \(x\in \ker(V)^\perp\).
+        </p>
+        <p>
+            Si además \(\ker(V)=\{0\}\) \(V\) se llama isometría.
+        </p>
+        <p>
+            El espacio inicial de \(V\) es \(\ker(V)^\perp\) y el espacio final de 
+            \(V\) es \(\ran(V)\).
+        </p>
+        <p>
+            Observación: si \(V\) es una isometría parcial entonces \(\ran(V)\) es un 
+            subespacio cerrado.
+        </p>
+
+    </div>
 
 
+    <div class="nota-box">
+        <h2 class="number-title"> Ejemplo</h2>
+        <p>
+            El operador \(T:\ell_2(\mathbb{N}) \to \ell_2(\mathbb{N})\) dado por 
+            \[
+            T(x_1,x_2, \dots )= (0,x_1,x_2,\dots)
+            \]
+            es una isometría con espacio inicial \(\ell_2(N)\) y espacio final 
+            \(\span(e_1)^\perp\).
+        </p>
+        <p>
+            Además el adjunto está dado por 
+            \[
+               T^*(x_1,x_2,\dots, )= (x_2,x_3,\dots) 
+            \]
+            el cual es una isometría parcial con espacio inicial con \(\span(e_1)^\perp\)
+            y espacio final \(\ell_2(\mathbb{N})\).
+        </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema</h2>
+        <p>
+            Sea \(T:H\to H\) un operador lineal acotado. Entonces 
+            \[
+            \ker(T)=\ker(T^*T).
+            \]
+        </p>
+
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición </h2>
+        <p>
+            Sea \(V:H\to H\) lineal acotado. 
+        </p>
+        <p>
+            Las siguientes condiciones son equivalentes.
+        </p>
+        <ol>
+            <li>
+                \(V\) es una isometría parcial.
+            </li>
+            <li>
+                \(V^*V\) es una proyección. 
+            </li>
+            <li>
+                \(V^*\) es una isometría parcial.
+            </li>
+            <li>
+                \(VV^*\) es una proyección. 
+            </li>
+
+        </ol>
+        <p>
+            Es más, si \(V\) es una isometría parcial entonces \(V^*V\) es la 
+            proyección en el espacio inicial de \(V\) y \(VV^*\) es la 
+            proyección en el espacio final de \(V\).
+        </p>
+
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Descomposición Polar</h3>
+        <p>
+            Sea \(T:H\to H\) un operador lineal acotado. Entonces existen 
+            \(P:H\to H\) un operador positivo y \(V:H\to H\) una isometría parcial 
+            tal que 
+            \[
+            T=VP
+            \]
+            La descomposición es única si pedimos que \(\ker(P)=\ker(V)\). 
+        </p>
+
+    </div>
+
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario </h2>
+        <h3> La otra descomposición Polar </h3>
+        <p>
+            Sea \(T:H\to H\) un operador lineal acotado. Entonces existen 
+            \(P:H\to H\) un operador positivo y \(W:H\to H\) una isometría parcial 
+            tal que 
+            \[
+            T=PW
+            \]
+            La descomposición es única si pedimos que \(\ran(W)=\overline{\ran(P)}\). 
+        </p>
+
+    </div>
 </body>        
