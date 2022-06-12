@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 22 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 22 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 23 </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Algebras \(C^*\)  </h1>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(A\) una álgebra. Una involución en \(A\) es una operación 
+            \(*:A\to A\) que satisface, para todos \(a,b\in A\), \(\alpha \in \mathbb{C}\): 
+            <ol>
+                <li>
+                    \((a^*)^*=a\),
+                </li>
+                <li>
+                    \((a+\alpha b)^*=a^*+\overline{\alpha} b^*\),
+                </li>
+                <li>
+                    \((ab)^*=b^*a^*\)
+                </li>
+            </ol>
+            Si además \(A\) es una álgebra de Banach y se cumple 
+            \[
+            \|a^*a\| =\|a\|^2
+            \]
+            para toda \(a\in A\) decimos que \(A\) es una álgebra \(C^*\).
+        </p>
+        <p>
+            Observaciones. 
+            <ol>
+                <li>
+                    Si \(A\) tiene 1, \(\mathbb{1}_A^*=\mathbb{1}_A\).
+                </li>
+                <li>
+                    Si \(a\) es invertible entonces \(a^*\) es invertible y \((a^*)^{-1}=(a^{-1})^*\).
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="nota-box">
+        <h2 class="number-title"> Ejemplos </h2>
+        <ol>
+            <li>
+                Sea \(X\) un espacio compacto Hausdorff. El álgebra \(A=C(X)\) dotada con la 
+                involución \(f^*=\overline{f}\) (complejo conjugado) es una álgebra \(C^*\).
+                
+            </li>
+            <li>
+                Sea \(H\) un espacio de Hilbert. El álgebra  \(A=\mathbb{B}(H)\) dotado con la 
+                involución dada por el adjunto:
+                \[
+                \langle Tx,y \rangle =\langle x, T^*y\rangle 
+                \]
+                es una álgebra \(C^*\).
+            </li>
+        </ol>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title">Lema</h2>
+        <p>
+            Sea \(A\) una álgebra normada con involución. Entonces la involución es una isometría.
+        </p>
+
+    </div>
+
+
+
+
+    <div class="prop-box"> 
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(A\) una álgebra con 1  y   \(a \in A\) arbitrario. Entonces 
+            \[
+                \sigma(a^*)=(\sigma(a))^{*}
+            \]
+        </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema</h2>
+        <p>
+            Sea \(A\) una álgebra \(C^*\) con 1. Un elemento \(u\in A\) se llama 
+            unitario si \(uu^*=u^*u=\mathbb{1}_A\).
+        </p>
+        <p>
+            Para todo elemento unitario \(u\in A\):
+            \[
+            \sigma(u^*)\subseteq \mathbb{S}^1=\{ z\in \mathbb{C}: |z|=1\}
+            \]
+        </p>
+
+    </div>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sea \(A\) una álgebra \(C^*\) con 1. Un elemento \(a\in A\) se llama 
+            autoadjunto si \(a=a^*\). 
+        </p>
+        <p>
+            Para todo \(a\in A\) autoadjunto se tiene 
+            \[
+                \sigma(a)\subseteq \mathbb{R}
+            \]
+        </p>
+
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sean \(A,B\) dos álgebras \(C^*\). Una función 
+            \(\Phi:A\to B\) se llama un homomorfismo-\(*\) si:
+            <ol>
+                <li>
+                    \(\Phi\) es lineal,
+                </li>
+                <li>
+                    \(\Phi\) respeta multiplicaciones, 
+                </li>
+                <li>
+                    para toda \(a\in A\), \(\Phi(a^*)=\Phi(a)^*\).
+                </li>
+            </ol>  
+        </p>
+
+    </div>
+
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema de Glefand-Naimark</h3>
+        <p>
+            Sea \(A\) una álgebra \(C^*\) con 1 conmutativa y sea \(M_A\)
+            su espacio de funcionales lineales multiplicativas, dotado 
+            con la topología \(\omega^*\). Entonces la 
+            transformada de Gelfand 
+            \[
+            \Gamma: A \to C(M_A)
+            \]
+            es un  homomorfismo-\(*\) que es isométrico, suprayectivo y cumple 
+            que \(\Gamma_{\mathbb{1}_A}\) es la función constante 1.
+        </p>
+        
+
+    </div>
+
+</body>

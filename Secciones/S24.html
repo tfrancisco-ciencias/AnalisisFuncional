@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 22 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 22 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 24 </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> El teorema espectral (versión funciones continuas)  </h1>
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema espectral (versión funciones continuas)</h3>
+        <p>
+            Sea \(H\) un espacio de Hilbert y \(T:H\to H\) un operador lineal, acotado y normal.
+            
+        </p>
+        <p>
+            Por \(C^*(T)\) denotamos el álgebra \(C^*\) con 1 generada por \(T\). Entonces 
+            <li>
+                el conjunto de funcionales lineales multiplicativas de \(C^*(T)\) (dotado con la 
+                topología \(\omega^*\)) es homeomorfo a \(\sigma(T)\),
+            </li>
+            <li>
+                la transformada de Gelfand induce un homomorfismo-\(*\)
+                \[
+                \tilde{\Gamma}: C^*(T)\to C(\sigma(T)))
+                \]
+                que es una isometría, suprayectivo y que cumple 
+                \begin{eqnarray*} 
+                    \tilde{\Gamma}_T&=& \textrm{ función identidad}, \\
+                    \tilde{\Gamma}_{T^*}&=&\textrm{función conjugado}, \\
+                    \tilde{\Gamma}_{\mathbb{1}_{C^*(T)}}&=&\textrm{función constante 1}.
+                \end{eqnarray*}
+            </li>  
+        </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(T:H\to H\) un operador lineal, acotado y normal. 
+        </p>
+        <p>
+            Existe un único homomorfismo-\(*\)
+            \[
+            \Phi:C^*(T)\to C(\sigma(T))
+            \]
+            que es isometría, suprayectivo y tal que 
+            \begin{eqnarray*} 
+                    \Phi(T)&=& \textrm{ función identidad}, \\
+                    \Phi(T^*)&=&\textrm{función conjugado}, \\
+                    \Phi(\mathbb{1}_{C^*(T)})&=&\textrm{función constante 1}.
+                \end{eqnarray*}
+        </p>
+
+    </div>
+
+
+    <div class="nota-box">
+        <h2 class="number-title"> Nota</h2>
+        <h3> Cálculo funcional</h3>
+        <p>
+            Sea \(T:H\to H\) un operador lineal, acotado y normal. 
+            Dada \(f:\sigma(T)\to \mathbb{C}\) una función continua definimos 
+            \(f(T)\) como el operador \(f(T)=(\tilde{\Gamma})^{-1}(f)\), 
+            donde \(\tilde{\Gamma}\) es el isomorfismo-\(*\) inducido por 
+            la transformada de Gelfand.
+        </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+            Sea \(A\) una álgebra \(C^*\) con 1 y \(B\subseteq A\)
+            una subálgebra cerrada con 1 de \(A\) que satisface \(B^*\subseteq B\).
+        </p>
+        <p>
+            Entonces para todo \(x\in B\) autoadjunto se cumple que 
+            \[
+                \sigma_B(x)=\sigma_A(x).
+            \]
+        </p>
+
+    </div>
+
+
+
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <p>
+            Sea \(A\) una álgebra \(C^*\) con 1 y \(B\subseteq A\)
+            una subálgebra cerrada con 1 de \(A\) que satisface \(B^*\subseteq B\).
+        </p>
+        <p>
+            Entonces para todo \(b \in B\) se cumple que 
+            \[
+                \sigma_B(b)=\sigma_A(b).
+            \]
+        </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario </h2>
+        <p>
+            Sea \(T:H\to H\) un operador lineal acotado y normal.
+        </p>
+        <ol>
+            <li>
+                \(T \geq 0\) sii \(\sigma(T)\subseteq [0,\infty)\),
+            </li>
+            <li>
+                \(T=T^*\) sii \(\sigma(T)\subseteq \mathbb{R}\).
+            </li>
+        </ol>
+
+    </div>
+</body>        

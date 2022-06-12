@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 21 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 21 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 22 </title>
+
+<body class="fondo-body">
+
+        <h1 class="number-title flexbox"> Teorma del mapeo espectral  </h1>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(f:\mathbb{C} \to \mathbb{C}\) una función entera son serie de potencias alrededor 
+            del cero dada por 
+            \[
+                f(z)=\sum_{n=0}^\infty \alpha_n z^n
+            \]
+        </p>
+        <p>
+            Sea \(A\) una álgebra de Banach con 1 y \(a\in A\). Por \(f(a)\) denotamos al elemento 
+            \[
+            f(a):=\sum_{n=0}^\infty \alpha_n a^n 
+            \]
+        </p>
+        <p>
+            \(f(a)\) es un elemento de \(A\) pues la serie es absolutamente convergente:
+            \[
+                \sum_{n=0}^\infty \|\alpha_n a^n\| \leq \sum_{n=0}^\infty |\alpha_n|\|a\|^n < +\infty
+            \]
+
+        </p>
+    </div>
+
+    <div class="teorema-box"> 
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema del mapeo espectral </h3>
+        <p>
+            Sea \(A\) una álgebra de Banach con 1 y \(a\in A\). Para toda función entera \(f(z)\)
+            se cunmple 
+            \[
+            \sigma(f(a))=f(\sigma(a))
+            \]
+        </p>
+
+    </div>
+
+    <div class="prop-box"> 
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(A\) una álgebra de Banach con 1 y \(a \in A\) invertible. Entonces 
+            \[
+                \sigma(a^{-1})=(\sigma(a))^{-1}
+            \]
+        </p>
+
+    </div>
+
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema del radio espectral </h3>
+        <p>
+            Sea \(A\) una álgebra de Banach con 1. Para todo \(a\in A\):
+            \[
+                r(a)=\lim_{n\to \infty}\|a^n\|^{1/n}
+            \]
+        </p>
+
+    </div>
+
+</body>        
