@@ -71,6 +71,282 @@
         <h1 class="number-title flexbox">  La retícula de proyecciones </h1>
 
 
+  <div class="nota-box">
+    <h2 class="number-title"> Nota </h2>
+    <p>
+        Sea \(H\) un espacio de Hilbert. Dado un subespacio 
+        cerrado \(Y \leq H\) podemos escribir 
+        \[
+        H=Y\oplus Y^\perp
+        \]
+        es decir, para todo \(x\in H\) existen únicos 
+        \(y\in Y, z\in Y^\perp\) tal que \(x=y+z\). 
+    </p>
+    <p>
+      La función \(E:H\to Y\) dada por \(E(x)=y\) 
+      es lineal, acotada y determina completamente a \(Y\) pues 
+      \[
+      Y=\{ x\in H:  \|Ex\|=\|x\| \}
+      \] 
+      y si \(E\ne 0\) entonces \(\|E\|=1\). Llamamos a \(E\)
+      la proyección ortogonal a \(Y\).
+      
+    </p>
+    <p> Además \(E\) satisface:
+    <ol>
+        <li>
+          \(E \geq 0\) pues 
+          \begin{eqnarray*}
+          \langle Ex,x \rangle &=&\langle y, x \rangle  \\
+          &=& \langle y,y+z \rangle \\
+          &=& \|y\|^2
+          \end{eqnarray*}
+          en particular \(E=E^*\).
+        </li>
+        <li>
+          Para toda \(x\in H\), \(E(Ex)=Ex\). Es decir, \(E^2=E\).
+        </li>
+    
+      </ol>
+    </p>
+    
+    <p>
+      Inversamente si \(E\) es un operador lineal acotado que 
+      satisface \(E=E^2=E^*\) entonces \(Y=E(H)\) es un subespacio 
+      cerrado y \(E\) es la proyección ortogonal sobre \(Y\).
+    </p>
+    <p>
+      A los operadores acotados que satisfacen \(E=E^2=E^*\) los llamaremos 
+      proyecciones ortogonales (o simplemente proyecciones).
+    </p>
+    
+    <p>
+        Entonces podemos establercer una biyección entre los siguientes 
+        conjuntos  
+        \begin{eqnarray*}  
+        \{ Y\leq H: \textrm{\(Y\) es cerrado} \} \leftrightarrow \{E\in \mathbb{B}(H): E=E^*=E^2 \}
+        \end{eqnarray*}
+        
+    </p>
+    <p>
+      El conjunto de subespacios cerrados de \(H\) es un 
+      conjunto parcialmente ordendado, tomando el orden dado por la 
+      contención. El siguiente resultado muestra que este orden es
+      ompatible con el orden edefinido en los operadores positivos.
+    </p>
+
+  </div>
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Sean \(Y,Z \leq H\) subespacios cerrados y 
+      \(E: H\to Y\), \(F: H\to Z\) sus proyecciones.
+    </p>
+    <p>
+      Las siguientes condiciones son equivalentes.
+      <ol>
+        <li>
+          \(Y\leq Z\),
+        </li>
+        <li>
+          \(FE=E\),
+        </li>
+        <li>
+          \(EF=E\),
+        </li>
+        <li>
+          \(\|Ex\| \leq \|Fx\|\), para toda \(x\in H\),
+        </li>
+        <li>
+          \(E\leq F\).
+        </li>
+      </ol>
+    </p>
+  </div>
 
 
+  <div class="nota-box">
+    <h2 class="number-title"> Nota </h2>
+    <p>
+      Sea \(\{Y_\alpha \}_{\alpha \in \Lambda}\)
+      una familia de subespacios cerrados de \(H\), definimos 
+      \begin{eqnarray*}
+      \wedge_{\alpha \in \Lambda }Y_\alpha &:=&\cap_{\alpha \in \Lambda} Y_\alpha \\
+      \vee_{\alpha \in \Lambda }Y_\alpha &:=&\overline{\span\left( \cup_{\alpha \in \Lambda} Y_\alpha \right)}  
+      \end{eqnarray*}
+      Es inmediato que con el orden dado por la conteción tenemos que 
+      \begin{eqnarray*} 
+      \wedge_{\alpha \in \Lambda }Y_\alpha &:=& \inf_{\alpha \in \Lambda}\{Y_\alpha \}\\
+      \vee_{\alpha \in \Lambda }Y_\alpha &:=& \sup_{\alpha \in \Lambda}\{Y_\alpha \}
+      \end{eqnarray*}
+      
+    </p>
+
+    <p>
+      Pasando estas relaciones sus proyecciones ortogonales, 
+      dada una  familia de proyecciones \(\{E_\alpha\}_{\alpha \in \Lambda}\)
+      definimos 
+      \begin{eqnarray*} 
+      \wedge_{\alpha \in \Lambda }E_\alpha &:=& \textrm{proyección ortogonal a \(\wedge_{\alpha \in \Lambda} E_\alpha(H)\)}\\
+      \vee_{\alpha \in \Lambda }E_\alpha &:=& \textrm{proyección ortogonal a \(\vee_{\alpha \in \Lambda} E_\alpha(H)\)}
+      \end{eqnarray*}
+    </p>
+    <p>
+      Por lo tanto la retícula de espacios cerrados y la 
+      de proyecciones son  completas.
+    </p>
+    <p>
+      La retícula de proyecciones admite la siguiente operación 
+      \[
+      E\mapsto I-E
+      \]
+      la cual revierte el orden (y es análoga a sacar complementes). Por lo tanto 
+      \begin{eqnarray*}
+        \vee_{\alpha \in \Lambda} (I-E_\alpha)=I-\wedge_{\alpha \in \Lambda} E_\alpha \\
+        \wedge_{\alpha \in \Lambda} (I-E_\alpha)=I-\vee_{\alpha \in \Lambda} E_\alpha 
+      \end{eqnarray*}
+    </p>
+    <p>
+      Como \(\ran(I-E)=\ran(E)^\perp \) las relaciones anteriores implican 
+      \begin{eqnarray*}
+        \vee_{\alpha \in \Lambda} Y_\alpha^\perp = \left( \wedge_{\alpha \in \Lambda} Y_\alpha \right)^\perp \\
+        \wedge_{\alpha \in \Lambda} Y_\alpha^\perp= \left( \vee_{\alpha \in \Lambda} Y_\alpha  \right)^\perp
+      \end{eqnarray*}
+    </p>
+  </div>
+
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición </h2>
+    <p>
+      Sean \(E,F:H\to H\) proyecciones que conmutan, \(EF=FE\). 
+      Denotamos \(Y=E(H), Z=F(H)\). Entonces 
+      <ol>
+        <li>
+          \(E\cap F = EF\),
+        </li>
+        <li>
+          \(E\vee F= E+F-EF\), 
+        </li>
+        <li>
+          \(Y\vee Z = Y+Z\).
+        </li>
+      </ol>
+    </p>
+
+  </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Corolario</h2>
+    <p>
+      Sean \(E,F:H\to H\) dos proyecciones.
+    </p>
+    <p>
+      \(E+F\) es proyección sii \(EF=0=FE\). En tal caso 
+      \[
+      E\vee F= E+F
+      \]
+      Si \(Y=E(H), Z=F(H)\) entonces \(Y\vee Z= Y+Z\).
+    </p>
+
+  </div>
+
+  <div class="ejercicio-box">
+    <h2 class="number-title"> Corolario</h2>
+    <p>
+      Sean \(E,F:H\to H\) proyecciones sobre 
+      \(Y,Z\) respectivamente. Si \(E \leq F\) entonces 
+      \[
+      F-E = F\wedge (I-E)
+      \]
+      es la proyección en \(Z\cap Y^\perp\).
+    </p>
+
+  </div>
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Sea \((\Lambda,\leq )\) un conjunto dirigido y 
+      \(\{E_\alpha\}_{\alpha \in \Lambda}\) una red 
+      creciente de proyecciones. Denotemos 
+      \(E=\vee_\alpha E_\alpha\). Entonces 
+      para todo \(x\in H\),
+
+      \[
+      \lim_\alpha \| E_\alpha x - Ex  \|=0.
+      \]
+    </p>
+
+  </div>
+
+  <div class="ejercicio-box"> 
+    <h2 class="number-title"> Corolario </h2>
+    <p>
+      Sea \((\Lambda,\leq )\) un conjunto dirigido y 
+      \(\{E_\alpha\}_{\alpha \in \Lambda}\) una red 
+      decreciente de proyecciones. Denotemos 
+      \(E=\wedge_\alpha E_\alpha\). Entonces 
+      para todo \(x\in H\),
+
+      \[
+      \lim_\alpha \| E_\alpha x - Ex  \|=0.
+      \]
+    </p>
+
+  </div>
+
+
+  <div class="prop-box">
+    <h2 class="number-title"> Proposición</h2>
+    <p>
+      Sea \(\{E_\alpha : H\to H\}_{\alpha \in \Lambda}\)
+      una familia de proyecciones con \(E_\alpha E_\beta =0\)
+      para \(\alpha \ne \beta\).
+    </p>
+    <p>
+      Sea \(E=\vee_{\alpha} E_\alpha\). Entonces para todo 
+      \(x\in H\),
+      \[
+      Ex= \sum_{\alpha \in \Lambda} E_\alpha x
+      \]
+      es decir, 
+      \[
+      \lim_{S\in  \mathcal{P}_{fin}(\Lambda)}\| Ex - \sum_{\alpha \in S}E_\alpha x \| =0
+      \]
+      donde  el límite se toma sobre la red de subconjuntos 
+      finitos de \(\Lambda\).
+    </p>
+  </div>
+
+
+    <div class="nota-box">
+      <h2 class="number-title"> Nota </h2>
+      <p>
+        Sea \(\{E_\alpha : H\to H\}_{\alpha \in \Lambda}\)
+        una familia de proyecciones con \(E_\alpha E_\beta =0\)
+        para \(\alpha \ne \beta\) y donde \(\Lambda\) es 
+        infinito.
+      </p>
+      <p>
+        Si \(E=\vee_{\alpha \in \Lambda} E_\alpha\) entonces 
+        \(\sum_{\alpha \in \Lambda}E_\alpha\) no converge en norma de 
+        operadores a \(E\). 
+      </p>
+      <p>
+        Razón:
+      </p>
+      <p>
+        Si \(S\subset \Lambda \) es finito 
+        \[
+        E-\sum_{\alpha \in S} E_\alpha = E\wedge \left( I-\sum_{\alpha \in S}E_\alpha \right)
+        \]
+        donde ésta última es una proyección distinta de cero y por lo tanto de norma 1, 
+        es decir 
+        \[
+        \left\| E-\sum_{\alpha \in S} E_\alpha  \right\|=1
+        \]
+        para todo subconjunto finito \(S\subset \Lambda\).
+      </p>
+    </div>
 </body>        
