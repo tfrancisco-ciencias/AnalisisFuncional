@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 27 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 27 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 28 </title>
+
+<body class="fondo-body">
+
+    <h1 class="number-title flexbox">  Medidas valuadas en proyecciones  </h1>
+    <h2 class="flexbox">(resolución de la identidad)</h2>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(X,\Sigma\) un espacio medible y \(H\) un espacio de hilbert. 
+            Una medida con valores en proyecciones (ó resolución de la identidad)
+            es una función 
+            \[
+            E:\Sigma \to \mathbb{B}(H)
+            \]
+            que satisface:
+            <ol>
+                <li>
+                    para toda \(B\in \Sigma\), \(E(B)=E(B)^*=E(B)^2\), es decir, una 
+                    proyección.
+                </li>
+                <li>
+                    \(E(X)=I, E(\emptyset)=0\).
+                </li>
+                <li>
+                    Si \((B_n)_{n=1}^\infty \subset \Sigma\) son ajenos dos a dos entonces 
+                    \[
+                    E(\cup_{n=1}^\infty B_n)=\sum_{n=1}^\infty E(B_n)
+                    \]
+                    donde la convergencia es en la topología SOT, es decir, para toda 
+                    \(x\in H\):
+                    
+                    \[
+                    \lim_{N \to \infty}\left\| E(\cup_{n=1}^\infty B_n)x-\sum_{n=1}^N E(B_n)x \right\|=0.
+                    \]
+                </li>
+            </ol>
+        </p>
+
+    </div>
+
+    <div class="nota-box">
+      <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Sea \((X,\Sigma, \mu)\) un espacio de medida finta y \(H=L^2(X,\Sigma, \mu)\). Recordamos que 
+        para \(g\in L^\infty(X,\Sigma,\mu)\), el operador 
+        \(M_g:H\to H\), \(M_g(f)=gf\) es lineal, acotado con \(\|M_g\|=\|g\|_\infty\).
+      </p>
+      <p>
+        Definimos \(E:\Sigma \to \mathbb{B}(H)\) por \(E(B)=M_{\chi_B}\). Entonces \(E\) es una 
+        medida con valores en proyecciones.
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(E:\Sigma \to \mathbb{B}(H)\) una resolución de la identidad. Entonces 
+        <ol>
+          <li>
+            Para \(A,B\in \Sigma\) con \(A\subseteq B\) se cumple 
+            \begin{eqnarray*} 
+            E(A)& \leq & E(B) \\
+            E(B\setminus A)& = & E(B)-E(A)
+            \end{eqnarray*}
+          </li>
+          <li>
+            Para \(A,B\in \Sigma\) arbitrarios se cumple 
+            \[
+              E(A\cap B)=E(A)E(B)=E(B)E(A)
+            \]
+          </li>
+          <li>
+            Si denotamos 
+            \[
+            \mathcal{N}(E)=\{B\in \Sigma: E(B)=0\}
+            \]
+            entonces \(\mathcal{N}\) es un \(\sigma\)-anillo.
+          </li>
+        </ol>
+      </p>
+
+    </div>
+
+    <div class="nota-box">
+      <h2 class="number-title"> Nota </h2>
+      <p>
+        Si \(E:(X,\Sigma) \to \mathbb{B}(H)\) es una resolución de la identidad 
+        con 
+        siempre existe \(\tilde{\Sigma}\), una 
+        \(\sigma\)-álgebra que contiene a \(\Sigma\) y una extensión  de \(E\)
+        \[
+        \tilde{E}:\tilde{\Sigma} \to \mathbb{B}(H)
+        \]
+        la cual satisface la siguiente 
+        propiedad: si \(B\in \tilde{\Sigma}\) con \(\tilde{E}(B)=0\) y \(A \subseteq B\) entonces 
+        \(\tilde{E}(A)=0\).
+      </p>
+      <p>
+        \((X,\tilde{\Sigma},\tilde{E})\) se llama la completaciónn de \((X,\Sigma,E)\).
+      </p>
+
+    </div>
+
+
+    <div class="definicion-box"> 
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Dada una función medible \(f:(X,\Sigma) \to (\mathbb{C},\textrm{Borelianos})\), decimos 
+        que está acotada casi donde quiera, relativa a \(E\), (abreviado c.d. rel. \(E\)) si 
+        existe una \(k \geq 0 \) tal que 
+        \[
+        E(\{x\in X: |f(x)|\geq k\})=0
+        \]
+        Denotamos 
+        \[
+        \mathcal{L}^\infty(E):=\{f:X\to \mathbb{C}: \textrm{\(f\) es acotada c.d. rel. \(E\) }\}
+        \]
+      </p>
+      <p>
+        Dada \(f\in \mathcal{L}^\infty(E)\) definimos 
+        \[
+        \|f\|_\infty=\inf\{k\geq 0:  E(\{x\in X: |f(x)| \geq k\}) = 0\}
+        \]
+        Decimos que \(|f(x)|\leq M\), c.d. rel. \(E\) si \(E(\{x\in X: |f(x)| > M \}) =0 \).
+        Con ésta Definición se cumple \(|f(x)|\leq \|f\|_\infty\) c.d. rel. \(E\).
+      </p>
+    </div>
+
+    <div class="ejercicio-box"> 
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Dadas \(f,g\in L^\infty(E)\) y \(\alpha \in \mathbb{C}\) se tiene que 
+        \(f+\alpha g \in L^{\infty}(E)\) y además 
+        \begin{eqnarray*}
+        \|f+g\|_\infty &\leq &\|f\|_\infty+ \|g\|_\infty,\\
+        \|\alpha g\|_\infty &= &|\alpha|\|g\|_\infty.
+        \end{eqnarray*}
+      </p>
+      <p>
+        Como en el caso de tería de la medida denotamos 
+        \[
+          L^\infty(E)=\mathcal{L}^\infty(E)/\mathcal{N}
+        \]
+        donde \(\mathcal{N}=\{f\in \mathcal{L}^\infty(E) : \|f\|_\infty=0\}\). Si definimos
+        \[
+        \|f+\mathcal{N}\|_\infty=\|f\|_\infty
+        \]
+        la definición no depende de la clase de \(f\) y define una norma en \(L^\infty(E)\).
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        \((L^\infty(E),\| \cdot \|_\infty)\) es un espacio de Banach.
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Con las operaciones  puntuales
+        \[
+          (fg)(x)=f(x)g(x), \quad f^*(x)=\overline{f(x)}
+        \]
+        \((L^\infty(E), \|\cdot\|_\infty)\) es una álgebra \(C^*\) con 1.
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Sea \(S=\span(\{\chi_B: B\in \Sigma \})\). Entonces 
+        \(S\) es \(\|\cdot\|_\infty\)-denso en \(L^\infty(E)\).
+      </p>
+      <p>
+        Llamamos a los elementos de \(S\) funciones simples.
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+        Sean \(E_1,\dots, E_n\in \mathbb{B}(H)\) una familia de proyecciones ortogonales 
+        dos a dos y \(\alpha_1,\dots, \alpha_n \in \mathbb{C}\). Entonces 
+        \[
+        \left\| \sum_{i=1}^n \alpha_i E_i \right\|=\max_{i=1,\dots, n}\{|\alpha_i| \}.
+        \]
+      </p>
+
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición</h2>
+      <h3> Integral para funciones simples </h3>
+      <p>
+        Dada \(s=\sum_{i=1}^n \beta_i \chi_{B_i} \), donde 
+        \((B_i)_{i=1}^n \subset \Sigma\) es una partición de \(X\), definimos
+        \[
+          \int_X sdE= \sum_{i=1}^n \beta_i E(B_i) \in \mathbb{B}(H)
+        \]
+      </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Para  \(s,t:X\to \mathbb{C}\) funciones simples y \(\alpha \in \mathbb{C}\)  se cumple 
+        \[
+        \int_X (s+\alpha t)dE= \int_XsdE+ \alpha \int_XtdE.
+        \]
+      </p>
+
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Corolario </h2>
+      <p>
+        Si \(s=\sum_{j=1}^n \gamma_j \chi_{C_j}\), con \(C_1,\dots, C_n\in \Sigma\) no necesariamente una 
+        partición de \(X\), entonces 
+        \[
+        \int_X sdE= \sum_{j=1}^n \gamma_j E(C_j)
+        \]
+      </p>
+
+    </div>
+
+    <div class="nota-box">
+      <h2 class="number-title"> Nota </h2>
+      <p>
+        Para una función simple \(s\in S\):
+        \[
+        \left\| \int_X sdE  \right\|_{\mathbb{B}(H)}=\|s\|_\infty
+        \]
+      </p>
+    </div>
+
+    <div class="definicion-box"> 
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Por la nota anterior tenemos que la función \(I: S \to \mathbb{B}(H)\) dada por 
+        \[
+        I(s)=\int_X sdE
+        \]
+        es una isometría y además también sabemos que es lineal, ya que 
+        \(S\) es \(\|\cdot\|_\infty\)-denso en \(L^\infty(E)\) ésta función se puede extener 
+        a una isometría lineal 
+        \[
+          I: (L^\infty(E),. \|\cdot\|_\infty) \to (\mathbb{B}(H), \| \cdot\|_{\mathbb{B}(H)})
+        \]
+        Denotamos 
+        \[
+        \int_Xf dE=I(f)
+        \]
+        y notamos que \(\int_X fdE\) es límite, en norma de operadores, de operadores de la forma 
+        \(
+          \sum_{j=1}^n \beta_j\chi_{B_j}
+        \).
+
+      </p>
+
+    </div>
+    
+    
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        Sea \((X,\Sigma,\mu)\) un espacio de medida finita y denotemos \(H=L^2(X,\Sigma, \mu)\).
+        Tomemos la resolución \(E:\Sigma \to \mathbb{B}(H)\) dada por \(E(B)=M_{\chi_B}\)
+      </p>
+      <p>
+        Para una función simple \(s=\sum_{i=1}^n\beta_i \chi_{B_i}\), 
+        \[
+        \int_X sdE= \sum_{i=1}^n \beta_i E(B_i)=\sum_{i=1}^n\beta_i M_{\chi_{B_i}}=M_s 
+        \]
+        Tomando límites se obtiene que para toda \(g\in L^\infty(E)\)
+        \[
+          \int_x gdE= M_g
+        \]
+      </p>
+      <p>
+        Observación: para \(g,g'\in L^\infty(E)\), \(\int_x gdE=\int_xg'dE\) sii \(g=g'\). 
+      </p>
+    </div>
+
+
+
+
+</body>        

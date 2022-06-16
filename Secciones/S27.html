@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 26 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 26 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 27 </title>
+
+<body class="fondo-body">
+
+    <h1 class="number-title flexbox">  Topologías de operadores débil y fuerte </h1>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición </h2>
+        <p>
+            Sea \(H\) un espacio de Hilbert. La topología débil de operadores en \(\mathbb{B}(H)\)
+            es la topología débil generada por las funciones lineales 
+            \begin{eqnarray*}
+            \rho_{x,y}: \mathbb{B}(H)\to \mathbb{C} \\
+            \rho_{x,y}(T)=\langle Tx,y\rangle,
+            \end{eqnarray*}
+            donde \(x,y\in H\). Esta topología se denota \(WOT\).
+        </p>
+        <p>
+            Observaciones:
+            <ol>
+                <li>
+                    Una base de vecindades abiertas en la topología WOT 
+                    alrededor de \(T\in \mathbb{B}(H)\)  está dada por 
+                    \[
+                    V(T:x_1,\dots, x_n,y_1,\dots, y_n;\varepsilon)=
+                    \{ S\in \mathbb{B}(H): |\rho_{x_i,y_i}(T-S)| < \varepsilon, i=1,\dots, n\}
+                    \]
+                    
+                </li>
+                <li>
+                    Una red de operadores \((T_\alpha)_{\alpha \in A} \subset \mathbb{B}(H)\) 
+                    converge a \(T\in \mathbb{B}(H)\) en \(WOT\) sii 
+                    \[
+                    \lim_{\alpha \in A} \langle T_\alpha x, y \rangle =\langle Tx, y \rangle 
+                    \]
+                    para todos \(x,y\in H\).
+                </li>
+                <li>
+                    La topologia \(WOT\) es Hausdorff pues 
+                    \[
+                    \langle Tx,y \rangle =\langle Sx,y \rangle \quad \forall x,y\in H \Leftrightarrow T=S.
+                    \]
+                </li>
+            </ol>
+        </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+            Sean \(A \in \mathbb{B}(H)\) fijo y arbitrario. Las funciones 
+            <ol>
+                <li>
+                    \(\alpha: \mathbb{B}(H)\times \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S,T)=S+T\),
+                </li>
+                <li>
+                    \(\beta: \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S)=AS\),
+                </li>
+                <li>
+                    \(\gamma: \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S)=SA\),
+                </li>
+                <li>
+                    \(\delta: \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S)=S^*\),
+                </li>
+                
+            </ol>
+            son \(WOT\)-continuas.
+        </p>
+
+    </div>
+
+    <div class="nota-box">
+        <h2 class="number-title"> Nota </h2>
+        <p>
+            La función 
+            \begin{eqnarray*} 
+            \mathbb{B}(H)\times \mathbb{B}(H) &\to & \mathbb{B}(H),\\
+            (S,T) & \mapsto & ST
+            \end{eqnarray*}
+            no es continua en la topología \(WOT\).
+        </p>
+        <p>
+            Por ejemplo, en \(H=\ell_2(\mathbb{N})\), tomar 
+            \begin{eqnarray*} 
+            T(x_1,x_2, \dots, )=(0,x_1,x_2,\dots)\\
+            \end{eqnarray*}
+            con adjunto 
+            \[
+            T^*(x_1,x_2,\cdots, )=(x_2,x_3,\cdots)
+            \]
+            Entonces 
+            \begin{eqnarray*} 
+                \lim_{n\to \infty} T^n = 0, \quad WOT \\
+                \lim_{n\to \infty} (T^*)^n = 0, \quad WOT 
+            \end{eqnarray*}
+            por lo tanto \(\lim_{n\to \infty} ((T^*)^n, T^n)=0\) en \(WOT\) pero 
+            \((T^*)^nT^n=I\) para toda \(n\), por lo que \( (T^*)^nT^n \nrightarrow 0\) en \(WOT\).
+            
+        </p>
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(\{E_\alpha :H\to H \}_{\alpha \in \Lambda}\) una familia de proyecciones 
+            ortogonales dos a dos. Sea \(E=\vee_{\alpha \in \Lambda}E_\alpha\). Entonces 
+            \[
+                \lim_{S \in \mathcal{P}_{fin}(\Lambda)} \sum_{\alpha \in S}E_\alpha = E, \quad WOT
+            \]
+            donde el límite es sobre la red de subconjuntos finitos de \(\Lambda\).
+        </p>
+
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición</h2>
+        <p>
+            La topología débil generada por las funciones lineales 
+            \begin{eqnarray*} 
+                \rho_x: \mathbb{B}(H)\to \mathbb{C}\\
+                \rho_x(T)=Tx 
+            \end{eqnarray*}
+            se llama la topología fuerte de operadores, denotada \(SOT\).
+        </p>
+        <p>
+            Observaciones:
+            <ol>
+                <li>
+                    Una base de vecindades abiertas en la topología \(SOT\) 
+                    alrededor de \(T\in \mathbb{B}(H)\)  está dada por 
+                    \[
+                    V(T:x_1,\dots, x_n;\varepsilon)=
+                    \{ S\in \mathbb{B}(H): \|\rho_x(T-S)\| < \varepsilon, i=1,\dots, n\}
+                    \]
+                    Al ser los \(x_1,\dots, x_n\in H\) arbitrarios, es suficiente tomar 
+                    \(\varepsilon=1\) en las vecindades pues 
+                    \[
+                    V(T:x_1,\dots, x_n;\varepsilon)=V(T:\varepsilon^{-1}x_1,\dots, \varepsilon^{-1}x_n;1)
+                    \]
+                </li>
+                <li>
+                    Una red de operadores \((T_\alpha)_{\alpha \in A} \subset \mathbb{B}(H)\) 
+                    converge a \(T\in \mathbb{B}(H)\) en \(SOT\) sii 
+                    \[
+                    \lim_{\alpha \in A} \| T_\alpha x -Tx \|=0,
+                    \]
+                    para todo \(x\in H\).
+                </li>
+                <li>
+                    La topologia \(WOT\) es Hausdorff pues 
+                    \[
+                    Tx=Sx \quad \forall x,y\in H \Leftrightarrow T=S.
+                    \]
+                </li>
+            </ol>
+        </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema </h2>
+        <p>
+            Sean \(A \in \mathbb{B}(H)\) fijo y arbitrario. Las funciones 
+            <ol>
+                <li>
+                    \(\alpha: \mathbb{B}(H)\times \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S,T)=S+T\),
+                </li>
+                <li>
+                    \(\beta: \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S)=AS\),
+                </li>
+                <li>
+                    \(\gamma: \mathbb{B}(H) \to \mathbb{B}(H)\),
+                    \(\alpha(S)=SA\),
+                </li>
+            </ol>
+            son \(SOT\)-continuas.
+        </p>
+
+    </div>
+
+
+    <div class="nota-box">
+        <h2 class="number-title"> Nota </h2>
+        <p>
+            La funciones 
+            \begin{eqnarray*} 
+            \mathbb{B}(H)\times \mathbb{B}(H) &\to & \mathbb{B}(H),\\
+            (S,T) & \mapsto & ST
+            \end{eqnarray*}
+            \begin{eqnarray*} 
+            \mathbb{B}(H) &\to & \mathbb{B}(H),\\
+            S & \mapsto & S^*
+            \end{eqnarray*}
+            
+            no son  continuas en la topología \(SOT\).
+        </p>
+        <p>
+            Por ejemplo, si \(H\) es un espacio de Hilbert y 
+            \(\{e_n\}_{n=1}^\infty\) es un conjunto infinito ortonormal, definimos 
+            \begin{eqnarray*}
+            V_n: H\times H,\\ 
+            V_n(x)=\langle x, e_n\rangle e_1,  
+            \end{eqnarray*}
+            Entonces 
+            <ol>
+                <li>
+                    \(V^*(x)=\langle x, e_1\rangle e_n\),
+                </li>
+                <li>
+                    \(V_n \rightarrow 0 \) en \(SOT\),
+                </li>
+                <li>
+                    \(V_n^* \nrightarrow 0 \) en \(SOT\).
+                </li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Denotamos, para \(k>0\), 
+            \[
+            (\mathbb{B}(H))_k=\{T\in \mathbb{B}(H): \|T\|\leq k \}.
+            \]
+            La función 
+            \begin{eqnarray*}
+                (\mathbb{B}(H))_k \times \mathbb{B}(H) &\to & \mathbb{B}(H),\\
+                (S,T) & \mapsto &  ST
+            \end{eqnarray*}
+            es \(SOT\)-continua.
+        </p>
+
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(\{E_\alpha :H\to H \}_{\alpha \in \Lambda}\) una familia de proyecciones 
+            ortogonales dos a dos. Sea \(E=\vee_{\alpha \in \Lambda}E_\alpha\). Entonces 
+            \[
+                \lim_{S \in \mathcal{P}_{fin}(\Lambda)} \sum_{\alpha \in S}E_\alpha = E, \quad SOT
+            \]
+            donde el límite es sobre la red de subconjuntos finitos de \(\Lambda\).
+        </p>
+
+    </div>
+
+
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(\varphi:\mathbb{B}(H)\to \mathbb{C}\) lineal y \(WOT\)-continua. 
+        </p>
+        <p>
+            Entonces existen \(x_1,\dots, x_n, y_1,\dots, y_n \in H\) tales que 
+            \[
+            \varphi(T)=\sum_{i=1}^n \langle Tx_i, y_i \rangle 
+            \]
+            para todo \(T\in \mathbb{B}(H)\). Por lo tanto \(\varphi\) es \(WOT\)-continua.
+        </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Corolario</h2>
+        <p>
+            Sea \(C \subseteq \mathbb{B}(H)\) convexo. Entonces 
+            \[
+            \overline{C}^{WOT}=\overline{C}^{SOT}.
+            \]
+        </p>
+
+    </div>
+
+
+</body>    
