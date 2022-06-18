@@ -37,10 +37,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
         body.number-title{
-          counter-reset: sectionCounter 27 cardCounter ;
+          counter-reset: sectionCounter 28 cardCounter ;
         }
         h1.number-title{
-          counter-reset: sectionCounter 27 cardCounter ;
+          counter-reset: sectionCounter 28 cardCounter ;
         }
       </style>
   
@@ -64,11 +64,162 @@
         </header>
 
       <!-- This part is for title in tab-->
-      <title> § 28 </title>
+      <title> § 29 </title>
 
 <body class="fondo-body">
 
     <h1 class="number-title flexbox">  Integral valuada en operadores  </h1>
     
 
+    <div class="nota-box">
+        <h2 class="number-title"> Nota </h2>
+        <p>
+          Para una función simple \(s\in S\):
+          \[
+          \left\| \int_X sdE  \right\|_{\mathbb{B}(H)}=\|s\|_\infty
+          \]
+        </p>
+      </div>
+  
+      <div class="definicion-box"> 
+        <h2 class="number-title"> Definición </h2>
+        <p>
+          Por la nota anterior tenemos que la función \(I: S \to \mathbb{B}(H)\) dada por 
+          \[
+          I(s)=\int_X sdE
+          \]
+          es una isometría y además también sabemos que es lineal, ya que 
+          \(S\) es \(\|\cdot\|_\infty\)-denso en \(L^\infty(E)\) ésta función se puede extener 
+          a una isometría lineal 
+          \[
+            I: (L^\infty(E),. \|\cdot\|_\infty) \to (\mathbb{B}(H), \| \cdot\|_{\mathbb{B}(H)})
+          \]
+          Denotamos 
+          \[
+          \int_Xf dE=I(f)
+          \]
+          y notamos que \(\int_X fdE\) es límite, en norma de operadores, de operadores de la forma 
+          \(
+            \sum_{j=1}^n \beta_j\chi_{B_j}
+          \).
+  
+        </p>
+  
+      </div>
+      
+      
+      <div class="info-box">
+        <h2 class="number-title"> Ejemplo </h2>
+        <p>
+          Sea \((X,\Sigma,\mu)\) un espacio de medida finita y denotemos \(H=L^2(X,\Sigma, \mu)\).
+          Tomemos la resolución \(E:\Sigma \to \mathbb{B}(H)\) dada por \(E(B)=M_{\chi_B}\)
+        </p>
+        <p>
+          Para una función simple \(s=\sum_{i=1}^n\beta_i \chi_{B_i}\), 
+          \[
+          \int_X sdE= \sum_{i=1}^n \beta_i E(B_i)=\sum_{i=1}^n\beta_i M_{\chi_{B_i}}=M_s 
+          \]
+          Tomando límites se obtiene que para toda \(g\in L^\infty(E)\)
+          \[
+            \int_x gdE= M_g
+          \]
+        </p>
+        <p>
+          Observación: para \(g,g'\in L^\infty(E)\), \(\int_x gdE=\int_xg'dE\) sii \(g=g'\). 
+        </p>
+      </div>
+  
+  
+  
+    <div class="prop-box">
+        <h2 class="number-title"> Proposición</h2>
+        <p>
+            Sea \(H\) un espacio de hilbert, \((X,\Sigma)\) un espacio medible y 
+            \(E: \Sigma \to \mathbb{B}(H)\) una medida valuada en proyecciones. 
+            Para \(f,g\in L^\infty(E)\) se cunple
+            <ol>
+                <li>
+                    \[
+                    \int_X \alpha f + g dE = \alpha \int_x fdE+ \int_xgdE
+                    \]
+                </li>
+                <li>
+                    \[
+                    \int_x fg dE= \left(\int_X fdE \right)\left(\int_X gdE \right)
+                    \]
+                </li>
+                <li>
+                    \[
+                    \left(\int_X fdE \right)^* = \int_X\overline{f}dE
+                    \]
+                </li>
+                <li>
+                    \[
+                    \left\| \int_X fdE \right\|=\|f \|_\infty
+                    \]
+                </li>
+                <li>
+                    \[
+                    \int_Xf dE=\int_X gdE \Leftrightarrow f=g \quad \textrm{c.d. rel. \(E\)}
+                    \]
+                </li>
+                <li>
+                    Si definimos \(dE_{x,y}:\Sigma \to \mathbb{C}\) por 
+                    \(dE_{x,y}(B)=\langle E(B)x, y \rangle \)
+                    entonces 
+                    \[
+                    \left\langle \left(\int_XfdE \right)x,y \right\rangle = \int_{X} fdE_{x,y}
+                    \]
+                    \[
+                    \left\| \left( \int_X fdE\right) x \right\|^2 = \int_X |f|^2 dE_{x,x}
+                    \]
+                </li>
+                <li>
+                    Para todo \(B\in \Sigma\)
+                    \[
+                    E(B)\left(\int_XfdE\right)= \left(\int_XfdE \right)E(B)
+                    \]
+                </li>
+                <li>
+                    Para toda \(f\in L^\infty(E)\), \(\int_X  fdE\) es normal y 
+                    \( (\int_Xf dE)^*=\int_XfdE\) sii \(f\) toma valores reales c.d. rel. \(E\).
+                </li>
+            </ol>
+        </p>
+
+    </div>
+
+    <div class="definicion-box">
+        <h2 class="number-title"> Definición</h2>
+        <p>
+            Sea \(X\) un espacio localmente compacto Hausdorff. Denotemos 
+            \(\mathbb{B}_X\) a los Borelianos de \(X\). Una resolución de la identidad 
+            \(E: \mathbb{B}_X \to \mathbb{B}(H)\) se llama regular si para todo \(B\in \mathbb{B}_X\)
+            \[
+                E(B)=\vee \{ E(C): C\subseteq B\quad \textrm{compacto}  \}.
+            \]
+        </p>
+
+    </div>
+
+    <div class="ejercicio-box">
+        <h2 class="number-title"> Lema</h2>
+        <p>
+            Sea \(X\) un espacio localmente compacto Hausdorff y  por \(\mathbb{B}_X\) denotemos 
+             a los Borelianos de \(X\).
+            \(E:\mathbb{B}_X \to \mathbb{B}(H)\) es regular sii para todo \(x\in H\), \(dE_{x,x}:\mathbb{B}_X\to \mathbb{R}\)
+            es una medida regular.
+        </p>
+         
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema</h2>
+      <p>
+          Sea \(X\) un espacio localmente compacto Hausdorff y segundo numerable. Por \(\mathbb{B}_X\) denotemos 
+           a los Borelianos de \(X\). Toda medida finita \(\mu:\mathbb{B}_X \to [0, \infty)\) es regular.
+      </p>
+       
+  </div>
 </body>    

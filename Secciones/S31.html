@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 30 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 30 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 31 </title>
+
+<body class="fondo-body">
+
+    <h1 class="number-title flexbox">  El Teorema Espectral (versión funciones medibles acotadas)  </h1>
+
+
+    <div class="teorema-box">
+        <h2 class="number-title"> Teorema </h2>
+        <h3> Teorema espectral </h3>
+        <p>
+           Sea \(T:H\to H\) un operador lineal acotado y normal. Existe una única resolución de la identidad regular,
+           \(E:\mathbb{B}_{\sigma(T)} \to \mathbb{B}(H)\) tal que: 
+        </p>
+        <ol>
+            <li> los operadores \(T,T^*\) e \(I\) se pueden describir como
+              \begin{eqnarray*}
+                T = \int_{\sigma(T)} t dE,\\
+                T^* = \int_{\sigma(T)} \overline{t} dE,\\
+                I = \int_{\sigma(T)} 1 dE.
+              \end{eqnarray*}
+            </li>
+            <li>
+              Si \(\mathcal{O} \subseteq \sigma(T)\) es abierto distinto del vacío entonces \(E(\mathcal{O})\ne 0\).
+            </li>
+            <li>
+              Un operador \(S\in \mathbb{B}(H)\) satisface \(ST=TS\) 
+              sii \(SE(B)=E(B)S\), para todo \(B\in \mathbb{B}_X\).
+            </li>
+          </ol>
+
+          <p>
+            La función \(\Phi: L^\infty(E)\to \mathbb{B}(H)\), dada por \(\Phi(f)=\int_X fdE\)
+            es un homomorfismo-\(*\) de álgebras \(C^*\) con 1 que además es una isometría.
+          </p>
+    
+
+    </div>
+
+
+</body>

@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            span: "\\operatorname{span}",
+            seg: ["\\overrightarrow{#1}", 1],
+            ran: "\\operatorname{ran}",
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 29 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 29 cardCounter ;
+        }
+      </style>
+  
+    
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Análisis Funcional  </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+
+
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 30 </title>
+
+<body class="fondo-body">
+
+    <h1 class="number-title flexbox">  El Teorema Espectral (versión abstracta)  </h1>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Representación de Riesz</h3>
+      <p>
+        Sea \(X\) un espacio localmente compacto Hausdorff. Denotamos
+        \[
+        C_c(X;\mathbb{R})=\{f: X\to \mathbb{R}: \textrm{\(f\) es continua de sopote compacto} \}
+        \]
+      </p>
+      <p>
+        Una función lineal \(\varphi: C_c(X;\mathbb{R})\to \mathbb{R}\) se llama positiva si satisface
+        \[
+        f \geq 0 \Rightarrow \varphi(f)\geq 0
+        \]
+      </p>
+      <p>
+        Para toda función lineal  positiva \(\varphi:C_c(X;\mathbb{R})\to \mathbb{R}\) existe una 
+        única medida regular sobre los Borelianos de \(X\), \(\mu:\mathbb{B}_X \to \mathbb{R}\)
+        con la propiedad 
+        \[
+          \varphi(f)=\int_X fd\mu
+        \]
+        para toda \(f\in C_c(X;\mathbb{R})\). 
+      </p>
+      <p>
+        Además \(\mu\) satisaface:
+        <ol>
+          <li>
+            para todo \(U\subseteq X\) abierto 
+            \[
+            \mu(U)=\sup_{f\in U_{\leq }}\{ \varphi(f) \},
+            \]
+            donde \(U_{\leq}=\{f\in C_c(X;\mathbb{R}): 0\leq f \leq 1, \sup(f)\subset U\}\).
+          </li>
+          <li>
+            para todo \(K\subseteq U\) compacto 
+            \[
+            \mu(K)=\inf_{\chi_K \leq f}\{\varphi(f)\}. 
+            \]
+          </li>
+        </ol> 
+      </p>
+    </div>
+
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(X\) un espacio localmente compacto Hausdorff.
+      </p>
+      <ol>
+        <li>
+          Sean \(\mu_1,\mu_2:\mathbb{B}_X \to \mathbb{R}\) medidas regulares. Entonces 
+          \[
+          \mu_1=\mu_2 \Leftrightarrow \int_X fd\mu_1 = \int_X f d\mu_2, \quad \forall f\in C_c(X;\mathbb{R})
+          \]
+        </li>
+        <li>
+          Sean \(\nu_1,\nu_2:\mathbb{B}_X \to \mathbb{R}\) medidas con signo finitas tales que 
+          \(\nu_i=\mu_+^{(i)}-\mu_-^{(i)}\), donde \(\mu_{\pm}^{i}\), \(i=1,2\), son medidas regulares. Entonces 
+          \[
+          \nu_1=\nu_2 \Leftrightarrow \int_X fd\nu_1 = \int_X f d\nu_2, \quad \forall f\in C_c(X;\mathbb{R})
+          \]
+        </li>
+        <li>
+          Sean \(\rho_1,\rho_2:\mathbb{B}_X \to \mathbb{R}\) medidas complejas tales que 
+          \(\rho_i=\nu_1^{(i)}+i\nu_2^{(i)}\), \(i=1,2\) y cada \(\nu_j^{(i)}\) son medidas 
+          con signo cada una una diferencia de medidas positivas finitas regulares. Entonces 
+          \[
+          \rho_1=\rho_2 \Leftrightarrow \int_X fd\rho_1 = \int_X f d\rho_2, \quad \forall f\in C_c(X;\mathbb{R})
+          \]
+        </li>
+      </ol>
+
+    </div>
+    
+
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Lema </h2>
+      <p>
+        Sea \(X\) un espacio localmente compacto Hausdorff y 
+        sea \(\rho:\mathbb{B}_X \to \mathbb{R}\) una medida compleja tale que 
+        \(\rho=\nu_1+i\nu_2\), \(\nu_i\) medidas 
+        con signo cada una diferencia de medidas positivas finitas regulares. Entonces 
+        \[
+        |\rho|(B)=\sup_{f\in C_c(X;\mathbb{R}), |f|\leq 1} \left\{ \left| \int_B fd\rho \right| \right\}
+        \]
+      </p>
+
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3 >  Teorema espectral abstracto </h3>
+      <p>
+        Sea \(A \subseteq \mathbb{B}(H)\) una álgebra \(C^*\) conmutativa com 1. Sea \(M\) 
+        el espacio de funcionales lineales multiplicativas sobre \(A\) dotado con la 
+        topología \(\omega^*\).
+      </p>
+      <p>
+        Existe una única resolución de la identidad regular, \(E:\mathbb{B}_M \to \mathbb{B}(H)\) 
+          tal que:
+      </p>
+      <ol>
+        <li>
+           Para todo \(T\in A\): 
+          \[
+            T = \int_M \hat{T}dE,
+          \]
+          donde \(\hat{T}\) denota la transformada de Gelfand de \(T\).
+        </li>
+        <li>
+          Si \(\mathcal{O} \subseteq M\) es abierto distinto del vacío entonces \(E(\mathcal{O})\ne 0\).
+        </li>
+        <li>
+          Un operador \(S\in \mathbb{B}(H)\) satisface \(ST=TS\) para todo \(T \in A\)
+          sii \(SE(B)=E(B)S\), para todo \(B\in \mathbb{B}_X\).
+        </li>
+      </ol>
+
+    </div>
+</body>    
