@@ -103,5 +103,58 @@
 
     </div>
 
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición </h2>
+      <p>
+        Sea \(T:H\to H\) un operador lineal acotado y normal y \(f:\sigma(T)\to \mathbb{C}\) continua. 
+        Sea \(E:\mathbb{B}_{\sigma(T)} \to \mathbb{B}(H)\) la resolución de la identidad de \(T\). 
+        Denotamos \(B_0=\{z\in \sigma(T): f(z)=0\}\) y \(E_0=E(f^{-1}(B_0))\). Entonces 
+        \[
+          \ker(f(T))=\ran(E_0).
+        \] 
+      </p>
 
+    </div>
+
+    <div class="definicion-box">
+      <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea \(T:H\to H\) un operador lineal acotado. Definimos
+        <ol>
+          <li>
+            El espectro puntual de \(T\) como: 
+            \[
+            \sigma_p(T)=\{ \lambda \in \mathbb{C}: \ker(T-\lambda I) \ne \{0\}\},
+            \]
+            es decir, son los valores propios de \(T\).
+          </li>
+          <li>
+            El espectro continuo de \(T\) como:
+            \[
+            \sigma_c(T)=\{ \lambda \in \mathbb{C}: \ker(T-\lambda I)= \{0\}, \ran(T-\lambda I) \ne H, \overline{\ran(T-\lambda I)} = H\},
+            \]
+            es decir, son los valores para los cuales \((T-\lambda I)^{-1}\) es un operador lineal 
+            no acotado densamente definido.
+          </li>
+          <li>
+            El espectro residual de \(T\) como el resto:
+            \[
+            \sigma_r(T)=\sigma(T)\setminus ( \sigma_p(T)\cup \sigma_r(T) ).
+            \] 
+          </li>
+        </ol>
+      </p>
+
+    </div>
+
+    <div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sea \(T:H\to H\) un operador lineal acotado y normal. Entonces 
+        \[
+        \sigma_r(T)=\emptyset
+        \]
+      </p>
+
+    </div>
 </body>
