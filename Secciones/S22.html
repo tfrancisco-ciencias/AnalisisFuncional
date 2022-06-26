@@ -131,4 +131,79 @@
 
     </div>
 
+
+    <div class="info-box">
+      <h2 class="number-title"> Ejemplo </h2>
+      <p>
+        Denotamos 
+        \[
+        \mathbb{S}^1=\{z\in \mathbb{C}: |z|=1\},\, \mathbb{D}=\{z\in \mathbb{C}: |z| \leq 1\}.
+        \]
+        Vamos a considerar dos álgebras: el álgebra de funciones continuas \(C(\mathbb{S}^1)\) y 
+        el álgebra de funciones continuas en \(\mathbb{D}\) y analíticas en su interior,
+        \[
+        A(\mathbb{D}):=\{f \in C(\mathbb{D}): \textrm{\(f\) es analítica sobre \(\operatorname{int}(\mathbb{D})\)}\}.
+        \]
+        Ya se había visto que \(C(\mathbb{S}^1)\) dotado con la norma uniforme es una álgebra de Banach. 
+        Gracias al Teorema de Morera se puede ver que \(A(\mathbb{D})\) dotada también con la norma 
+        uniforme es una álgebra de Banach.
+      </p>
+      <p>
+        El álgebra \(C(\mathbb{S}^1)\) tiene una copia de \(A(\mathbb{D})\) lo cual se puede ver 
+        considerando el mapeo restricción, \(\Phi: A(\mathbb{D}) \to C(\mathbb{S}^2)\)
+        donde \(\Phi(h)=h|_{\mathbb{S}^1}\). Es claro que \(\Phi\) es un homomorfimos de álgebras. Además 
+        gracias a el Teorema del módulo máximo \(\Phi\) es una isometría así que podemos pensar 
+        \(\Phi(A(\mathbb{D}))\) como una copia de \(A(\mathbb{D})\) dentro de \(C(\mathbb{S}^1)\).
+      </p>
+      <p>
+        Si condieramos las funciones identidad \(f_1:\mathbb{S}^1 \to \mathbb{S}^2\), \(f_1(z)=z\),
+        \(h_1:\mathbb{D}\to \mathbb{D}\), \(h_1(z)=z\), notamos que 
+        \(\Phi(h_1)=f_1\) y que tenemos una contención pripia de los espectros 
+        \[
+          \sigma_{C(\mathbb{S}^1)}(f_1)=\mathbb{S}^1 \subset \mathbb{D} =\sigma_{\Phi(A(\mathbb{D}))}(f_1)
+        \]
+        lo cual muestra que dependiendo de qué álgebra ambiente se tome el espectro puede cambiar. 
+      </p>
+      <p>
+        Un observación importante es que la frontera es la misma, 
+        \[
+        \partial \sigma_{C(\mathbb{S}^1)}(f_1)=\partial \sigma_{\Phi(A(\mathbb{D}))}(f_1).
+        \]
+        No siempre las fronteras son iguales pero 
+        sí se da siempre una contención lo cual es un resultado debido a Shilov y que se prueba más adelante.
+      </p>
+
+
+    <button class="respButton hvr-grow felxbox"> Explicación   </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/mav15-qHAVw?start=51" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+    </div>
+
+    <div class="teorema-box">
+      <h2 class="number-title"> Teorema </h2>
+      <h3> Shilov</h3>
+      <p>
+        Sea \(A\) una álgebra de Banach con 1 y \(B\subseteq A\) una subálgebra 
+        cerrada de \(A\) con 1 (\(A\) y \(B\) comparten el mismo uno). Para todo 
+        \(b\in B\) se cumple 
+        \[
+          \partial \sigma_B(b) \subseteq \partial \sigma_A(b).
+        \]
+      </p>
+
+      <button class="respButton hvr-grow felxbox"> Explicación   </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/mav15-qHAVw?start=703" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
+    </div>
+
 </body>        
