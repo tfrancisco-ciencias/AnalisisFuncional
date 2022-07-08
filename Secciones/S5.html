@@ -231,16 +231,16 @@
         <h2 class="number-title"> Definición </h2>
         <p>
             Sea \((X,\|\cdot\|)\) un espacio vectorial normado 
-            y \(X^*\) su dual. Dado \(x\in X\) definimos \(\iota_x:X^*\to \mathbb{F}\)
-            por \(\iota_x(\varphi)=\varphi(x)\).
+            y \(X^*\) su dual. Dado \(x\in X\) definimos \(\hat{x}:X^*\to \mathbb{F}\)
+            por \(\hat{x}(\varphi)=\varphi(x)\).
         </p>
         <p>
             La topología débil generada por 
-            familia \(\{\iota_x\}_{x\in X}\) se llama la topología débil estrella
+            familia \(\{\hat{x}\}_{x\in X}\) se llama la topología débil estrella
             en \(X^*\) o simplemente  débil-* y se denota por \(\omega^*\).</p>
         <p>
-            Por la <a href="#Prop:RedesConvergentesTopDebil">Proposición 6.6<a> tenemos que una red de funcionales lineales, \((\varphi_{\alpha})_{\alpha \in A}\),
-            converge a la funcional \(\varphi\) en la topología débil-* sii para toda \(x\in X\) 
+            Por la <a href="#Prop:RedesConvergentesTopDebil">Proposición 5.6<a> tenemos que una red de funcionales lineales, \((\varphi_{\alpha})_{\alpha \in A}\),
+            converge a la funcional \(\varphi\) en la topología \(\omega^*\) sii para toda \(x\in X\) 
             \[
                 \lim_{\alpha \in A}\varphi_\alpha(x)=\varphi(x). 
             \]
@@ -276,7 +276,7 @@
             sii \(\alpha \leq \alpha '\) y \(\beta \leq \beta '\).
         </p>
         <p>
-            Por la  Proposición 6.6
+            Por la  Proposición 5.6
             es suficiente probar  que para todo \(x\in X\)
             \[
             \lim_{\alpha,\beta} (a \varphi_\alpha + \psi_\beta)(x)=(a\varphi+\psi)(x) \quad \textrm{en \(\mathbb{F}\)}.
@@ -317,7 +317,7 @@
             donde \(V\) es una vecindad del cero. 
         </p>
         <p>
-            Por el <a href="#Lema:BaseTopoDebil"> Lema 1.3</a> las vecindades de la funcional cero son e la forma 
+            Por el <a href="#Lema:BaseTopoDebil"> Lema 5.3</a> las vecindades de la funcional cero son e la forma 
             \[
             \cap_{i=1}^n \iota_{x_i}^{-1}(B_{r_i}(0))=\{\varphi\in X^*: |\varphi(x_i)|< r_i, i=1,\dots, n\}.
             \]
@@ -353,12 +353,15 @@
 
 
 
-<button class="respButton hvr-grow "> Demostración </button>
-<div class="resp-box flexbox">
-  <div class="flexbox">
-    <a href="https://www.youtube.com/embed/KLCjRxQU3z0" target="_blank" > Video </a>
-  </div>
-</div>
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/KLCjRxQU3z0" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
 
         
     </div>
