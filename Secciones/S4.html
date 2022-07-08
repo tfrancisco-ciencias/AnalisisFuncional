@@ -83,6 +83,8 @@
           </li>
         </ol>
       </p>
+
+
     </div>
 
 
@@ -122,6 +124,15 @@
       </li>
       
     </ol>
+
+    <button class="respButton hvr-grow felxbox"> Explicación </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <iframe width="500" height="400" class="video"
+        src="https://www.youtube.com/embed/a0SuWrStL4s?start=932" allowfullscreen="true"> 
+        </iframe>
+      </div>
+    </div>
     </div>
 
 
@@ -143,6 +154,15 @@
         </li>
       </ol>
 
+        <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
+
     </div>
 
     <div class="definicion-box">
@@ -156,23 +176,49 @@
       <p>
         Dada \(\varphi \in X^*\) definimos 
         \[
-        \|\varphi\|=\sup_{x\in X, \|x\|\leq 1}\{|\varphi(x)| \}.
+        \|\varphi\|=\inf_{M>0}\{|\varphi(x)|\leq M\|x\|, \, \textrm{para toda}\, x\in X \}
         \]
       </p>
       <p>
         Obsevación: para todo \(x\in X\), \(|\varphi(x)|\leq \|\varphi\| \|x\|\).
       </p>
 
+        <button class="respButton hvr-grow felxbox"> Explicación </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=1547" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
     </div>
+
 
     <div class="prop-box">
       <h2 class="number-title"> Lema</h2>
       <p>
-        Sea \(X\) un espacio vectorial normado. Entonces \((X^*,\|\cdot\|)\) es un espacio 
-        vectorial normado.
+        Sea \(X\) un espacio vectorial normado. Si \(\varphi:X\to \mathbb{F}\) es lineal acotada entonces 
+        <ol>
+          <li>
+              \( \|\varphi\|=\sup_{x\in X, \|x\|\leq 1}\{|\varphi(x)| \}. \)
+          </li>
+          <li>
+            \((X^*,\| \cdot\|)\) es un espacio vectorial normado.
+          </li>
+        </ol>
       </p>
 
+
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+        <div class="resp-box flexbox">
+          <div class="flexbox">
+            <iframe width="500" height="400" class="video"
+            src="https://www.youtube.com/embed/a0SuWrStL4s?start=2220" allowfullscreen="true"> 
+            </iframe>
+          </div>
+        </div>
     </div>
+
 
     <div class="teorema-box">
       <h2 class="number-title"> Teorema </h2>
@@ -180,7 +226,14 @@
         Sea \(X\) un espacio vectorial normado. Entonces \((X^*,\|\cdot\|)\) es un espacio 
         de Banach.
       </p>
-
+      <button class="respButton hvr-grow felxbox"> Demostración </button>
+      <div class="resp-box flexbox">
+        <div class="flexbox">
+          <iframe width="500" height="400" class="video"
+          src="https://www.youtube.com/embed/a0SuWrStL4s?start=2772" allowfullscreen="true"> 
+          </iframe>
+        </div>
+      </div>
     </div>
 
     <div class="info-box"> 
@@ -192,6 +245,10 @@
         \[
         \sup_{x\in X, \|x\|\leq 1}\{ \|Tx\|\} < +\infty
         \]
+      </p>
+      <p>
+        Con las mismas ideas que se usaron para funcionales lineales acotadas se puede probar el 
+        siguiente resultado.
       </p>
 
 
