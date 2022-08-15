@@ -206,7 +206,10 @@
     <h2 class="number-title"> Proposición</h2>
     <p>
       Para una álgebra de Banach, \(G,G_r\)  y \(G_l\)
-      son abiertos.
+      son abiertos. Es más, si \(a\in G\) entonces 
+      \[
+      B_{\frac{1}{\|a^{-1}\|}}(a) \subseteq G
+      \]
     </p>
     <button class="respButton hvr-grow felxbox"> Demostración   </button>
     <div class="resp-box flexbox">
@@ -228,6 +231,38 @@
       \end{eqnarray*}
       es continua. Por lo tanto \(G\) es un grupo topológico.
     </p>
+    <button class="respButton hvr-grow felxbox"> Demostración   </button>
+    <div class="resp-box">
+        <p>
+          Sea \((a_n)_{n=1}^\infty \subseteq G\) tal que \(\lim_{n\to \infty}\|a_n-a\| =0\),
+          para un \(a\in G\).
+        </p>
+        <p>
+
+          Si \(N\) es tal que \(\|a_n-a \|< \frac{1}{2\|a^{-1}\|}\), para todo 
+          \(n\geq N\), entonces 
+          \begin{eqnarray*}
+          \|a_n-a \|< \frac{1}{2\|a^{-1}}
+          \Rightarrow \| a^{-1}a_n-1 \|\leq \| a^{-1}\| \| a_n-a\| < \frac{1}{2}
+          \end{eqnarray*}
+          
+          por Proposición 19.4
+          \begin{eqnarray*}
+            \| a_n^{-1}a\|=\| (a^{-1}a_n)^{-1}\| \leq \frac{1}{1-\| a^{-1}a_n-1 \|} < \frac{1}{2}
+          \end{eqnarray*}
+          Multiplicando por \(\|a^{-1}\|\) la desigualdad anterior obtenemos 
+          \[
+          \| a_{n}^{-1}\| \leq \|a_n^{-1}a\| \|a^{-1}\| \leq \frac{\|a^{-1}\|}{2}.
+          \]
+          Finalmente, tenemos para toda \(n\geq N\):
+          \begin{eqnarray*}
+          \|a_{n}^{-1}-a^{-1}\|&=&\|a_{n}^{-1}(a-a_n)a^{-1}  \|  \\
+          &\leq & \|a_n^{-1}\| \|a-a_n \| \|a^{-1}\|  \\
+          &\leq & \frac{\|a^{-1}\|^2}{2}\| a-a_n\|
+          \end{eqnarray*}
+          lo cual implica \(\lim_{n\to \infty}\| a_n^{-1}-a^{-1}\|=0\).
+        </p>
+    </div>
 
   </div>
 
