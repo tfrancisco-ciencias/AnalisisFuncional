@@ -125,7 +125,34 @@
             \[
                 \sigma(a^{-1})=(\sigma(a))^{-1}
             \]
-        </p>
+        </p><button class="respButton hvr-grow felxbox"> Demostración   </button>
+        <div class="resp-box flexbox">
+          <p>
+            Observación: \(a\) invertible sii \(0 \notin \sigma(a)\).
+          </p>
+          <p>
+            Por lo tanto, tanto ni \(\sigma(a)\) ni \(\sigma(a^{-1})\) contienen al cero y por lo tanto
+            podemos tomar \(\sigma(a)^{-1},\sigma(a^{-1})^{-1}\).
+          </p>
+          <p>
+            Para continuar notamos que para \(\lambda \in \mathbb{C}\), \(\lambda \ne 0\)
+            \[
+              a^{-1}-\lambda^{-1}=a^{-1}(\lambda - a)\lambda^{-1}
+            \]
+            por lo tanto \(a^{-1}-\lambda^{-1}\) es invertible sii 
+            \(a-\lambda\) es invertible, lo cual se puede escribir como 
+            \[
+            \lambda^{-1}\in \rho(a^{-1}) \Leftrightarrow \lambda \in \rho(a)
+            \]
+            lo cual se puede escribir como \(\rho(a^{-1})^{-1}=\rho(a)\) y sacando complementos
+            obtenemos 
+            \[
+            \sigma(a^{-1})^{-1}=\sigma(a) \Rightarrow \sigma(a^{-1})=\sigma(a)^{-1}
+            \]
+          </p>
+        
+        </div>
+
 
     </div>
 
