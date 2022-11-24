@@ -274,4 +274,73 @@
 
     </div>
 
+    <div class="ejercicio-box">
+      <h2 class="number-title"> Corolario </h2>
+      <p>
+        Sea \(A\) una álgebra \(C^*\) con 1 y \(a\in A\).
+      </p>
+      <ol>
+        <li>
+          Si \(a\) es normal entonces \(r(a)=\|a\|\).
+        </li>
+        <li>
+          Si \(a\) es autoadjunto entonces alguno de los valores 
+          \(\pm \|a\|\) pertenece al espectro \(\sigma(a)\).
+        </li>
+      </ol>
+
+      <button class="respButton hvr-grow felxbox"> Demostración  </button>
+      <div class="resp-box flexbox">
+        <p>
+          Inciso 1.
+        </p>
+        <p>
+          Ya que \(a\) es normal, \(C^*(a)\), el álgebra \(C^*\) con 1 generada por \(a\) 
+          es conmutativa y por lo tanto la transformada de Gelfand 
+          \[
+          \Gamma: C^*(a) \to C(M_{C^*(a)})
+          \]
+          es un isomorfismo-\(*\) isométrico. En particular 
+          \[
+          \|a\|=\|\Gamma_a\|_\infty
+          \]
+          pero por el Corolario 21.11, 
+          \[
+          \|\Gamma_a\|_\infty=r(a).
+          \]
+        </p>
+        <p>
+          Inciso 2.
+        </p>
+        <p>
+          Ya que 
+          \[
+          r(a)=\sup_{\lambda \in \sigma(a)}\{|\lambda | \}
+          \]
+          \(\sigma(a)\) es compacto y \(\|a\|=r(a)\), exsite 
+          \(\lambda_0 \in \sigma(a)\) con \(|\lambda_0|=\|a\|\)
+          por lo tanto \(\pm\|a\|=\lambda_0 \in \sigma(a)\).
+
+        </p>
+    </div>
+</div>
+
+<div class="prop-box">
+      <h2 class="number-title"> Proposición</h2>
+      <p>
+        Sean \(A,B\)  álgebras \(C^*\) con 1 y \(\Phi:A\to B\) un 
+        homomorfismo-\(*\). Entonces: 
+      </p>
+      <ol>
+        <li>
+          Para toda \(a\in A\), \(\sigma(\Phi(a)) \subseteq \sigma(a)\) y 
+          \(\|\Phi(a)\| \leq \|a\|\), en particular \(\Phi\) es acotado.
+        </li>
+        <li>
+          Si \(\Phi\) es un isomorfismo entonces \(\|\Phi(a)\|=\|a\|\)
+          para toda \(a\) y \(\sigma(\Phi(a))=\sigma(a)\).
+        </li>
+      </ol>
+
+    </div>
 </body>
